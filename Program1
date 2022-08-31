@@ -1,0 +1,38 @@
+using System;
+class Program
+{
+    public int instanceVar = 10;
+    public static int classVar = 20;
+    public void fn(int paramVar)
+    {
+        for(int localVar=0; localVar < paramVar; localVar++)
+        {
+            Console.WriteLine("Local Var: " + localVar);
+        }
+        //Console.WriteLine("Local Var: " + localVar);
+        Console.WriteLine("param Var: " + paramVar);
+        Console.WriteLine("Class var : " + classVar);
+        Console.WriteLine("Instance var : " + instanceVar);
+
+    }
+    static void Main(string[] args)
+    {
+        Program p1 = new Program();
+        Program p2 = new Program();
+        Console.WriteLine("Instance Var of P1: " + p1.instanceVar); //10
+        Console.WriteLine("Instance Var of P2: " + p2.instanceVar); //10
+        p1.instanceVar = 15;
+        Console.WriteLine("Instance Var of P1: " + p1.instanceVar); //15
+        Console.WriteLine("Instance Var of P2: " + p2.instanceVar); //10
+
+        Console.WriteLine("Class Var of Program: " + Program.classVar);
+        p1.fn(1); //0, 1, 20, 15
+        p2.fn(1); //0, 1, 20, 10
+        Program.classVar = 50;
+        Console.WriteLine("Class Var of Program: " + Program.classVar);
+        p1.fn(1); //0, 1, 50, 15
+        p2.fn(1); //0, 1, 50, 10
+        Console.ReadLine();
+    }
+}
+
