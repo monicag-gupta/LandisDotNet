@@ -1,0 +1,10 @@
+Identifiers are variables, methods , class or any other named constructs in C#
+Rules
+Should not be a keyword: reserved Keywords
+Must start with a letter(A-Z or a-z) or underscore(_) or @
+An identifier with an @ prefix is called a verbatim identifier. 
+The prefix "@" enables the use of keywords as identifiers. ( int is a Keyword but @int is an identifier)
+In C++, an underscore usually indicates a private member variable.
+In C#, I usually see it used only when defining the underlying private member variable for a public property. Other private member variables would not have an underscore.
+Using two underscores is bad - that is reserved for compiler-specific implementation details. 
+Subsequent characters can be a letter, number or underscore
