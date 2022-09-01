@@ -1,0 +1,24 @@
+using System;
+    class Program     {
+        static void Main(string[] args)         {
+            int x = 20;
+            int y = 10;
+            Console.WriteLine("x + y = " + (x + y)); //30
+            Console.WriteLine("x - y = " + (x - y)); //10
+            Console.WriteLine("x * y = " + (x * y)); //200
+            Console.WriteLine("x / y = " + (x / y)); //2
+            x = 12;
+            Console.WriteLine("Remainder Oerator: 12 % 10 = " + (x % y)); //2
+            Console.WriteLine("Increment Operator: Add 1 to the current value :  ");
+            Console.WriteLine("Pre Increment (pre increment then give) x={0} then (++x) = {1} now x={2} ",
+                x,(++x),x); //12, 13, 13
+            Console.WriteLine("Post Increment (give then post increment) x={0} then (x++) = {1} now x={2} ",
+                x, (x++), x); //13, 13, 14
+            Console.WriteLine("Decrement Operator: Subtract 1 from the current value :  ");
+            Console.WriteLine("Pre Decrement (pre decrement then give) x={0} then (--x) = {1} now x={2} ",
+                x, (--x), x);  //14, 13, 13
+            Console.WriteLine("Post Decrement (give then post Decrement) x={0} then (x--) = {1} now x={2} ",
+                x, (x--), x); //13, 13, 12
+            Console.ReadLine();
+        }
+    }
