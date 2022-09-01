@@ -32,6 +32,7 @@ class Program
                 {
                     Console.Write(i + ",\t");
                 }
+                Console.WriteLine();
             }
             else if (ch == 3)
                 break;
@@ -39,12 +40,7 @@ class Program
                 Console.WriteLine("Invalid Choice! try again");
 
         }
-
-
-
-
-
-        Console.ReadKey();
+        //Console.ReadKey();
     }
 }
 
