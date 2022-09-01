@@ -1,0 +1,26 @@
+using System;
+class Program {
+    static void Main(string[] args)    {
+        int x = 4; 
+        int y = 5;
+        int z = 3;
+        Console.WriteLine("x={0}, y={1}, z={2}", x, y, z);
+        //Relational operators: used to compare: returns true or false
+        Console.WriteLine("Greater than: x > y? "+ (x > y));
+        Console.WriteLine("Smaller than: x < y? " + (x < y));
+        Console.WriteLine("Equal to : x == y? " + (x == y));
+        Console.WriteLine("Greater than equal to: x >= y? " + (x >= y));
+        Console.WriteLine("Smaller than equal to: x <= y? " + (x <= y));
+
+        //logical operator combines two relational operators :  returns true or false
+        //&& -> returns true if both sides are true ; else return false
+        //|| -> returns false if both sides are false ; else return true
+        //! -> not true returns false and vice versa.
+        Console.WriteLine("Biggest no is x?? x>y && x>z? " + (x > y && x > z));
+        Console.WriteLine("if x is greater than y or z?? x>y || x>z? " + (x > y || x > z));
+        Console.WriteLine("negate x>y?? ! (x>y) ? " + (!(x>y)));
+        Console.ReadLine();
+    }
+}
+
+
