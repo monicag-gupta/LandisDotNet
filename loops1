@@ -1,0 +1,50 @@
+using System;
+class Emp
+{
+
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+        
+        while (true)
+        {
+            Console.WriteLine("***Menu***\n1. Get arr element from index for display(0-6)");
+            Console.WriteLine("2. Display entire array\n3. Exit");
+            int ch = Convert.ToInt32(Console.ReadLine());
+            if (ch == 1)
+            {
+                Console.WriteLine("Enter arr index for display(0-6)");
+                int n = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("The required element is: {0}", (n >= 0 && n <= 6) ? arr[n] : arr[0]);
+            }
+            else if (ch == 2)
+            {
+                Console.WriteLine("\nThe array :");
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    Console.Write(arr[i] + " " + ((i < arr.Length - 1) ? ",\t" : "\n"));
+                }
+                Console.WriteLine("By better iteration, (but without terminating condition: the array :");
+                foreach (int i  in arr)
+                {
+                    Console.Write(i + ",\t");
+                }
+            }
+            else if (ch == 3)
+                break;
+            else
+                Console.WriteLine("Invalid Choice! try again");
+
+        }
+
+
+
+
+
+        Console.ReadKey();
+    }
+}
+
