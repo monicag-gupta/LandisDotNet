@@ -1,0 +1,28 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int x;
+        long l;
+        double d;
+        char c;
+        string s;
+        Console.WriteLine("Enter your name: ");
+        s=Console.ReadLine();
+        Console.WriteLine("Enter your age: ");
+        x = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter your A/c number: ");
+        l= Convert.ToInt64(Console.ReadLine());
+        Console.WriteLine("Enter your interest rate: ");
+        d = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Do you want to join (Y/N): ");
+        c=Convert.ToChar(Console.ReadLine());
+        if (c == 'Y' || c=='y')
+            Console.WriteLine("Welcome " + s + "\nYou have " + (65 - x) + " Years to retire!");
+
+
+        Console.ReadKey();
+    }
+}
+
