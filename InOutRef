@@ -1,0 +1,60 @@
+using System;
+class A
+{
+    public int a;
+}
+
+class Program
+{
+    public void incre(ref int x)
+    {
+        x++;
+    }
+
+    public void fnA(A obja)
+    {
+        obja.a = 100 + obja.a;
+    }
+    public void input(in int x)
+    {
+        int y = x;
+       
+    }
+    public void value(int x)
+    {
+        x = x + 10;
+    }
+    public int output(out int x, out int y)
+    {
+        x = 10;
+        y = 20;
+        x += 20;
+        return x + y;
+    }
+    static void Main(string[] args)
+    {
+        Program p = new Program();
+        int a = 20;
+        Console.WriteLine("a before incre() : " + a);
+        p.incre(ref a);
+        Console.WriteLine("a after incre() : " + a);
+        A Aa = new A();
+        Aa.a = 40;
+        Console.WriteLine("Aa.a before fnA() : " + Aa.a);
+        p.fnA(Aa);
+        Console.WriteLine("Aa.a after fnA() : " + Aa.a);
+        Aa = null;
+        int d=90;
+        p.input(in d);
+        int e,f=80;
+        p.output(out e, out f);
+        Console.WriteLine("Output() -> e = " + e + "\t f =" + f);
+        int h = 90;
+        Console.WriteLine("h before value() : " + h);
+        p.value(h);
+        Console.WriteLine("h after value() : " + h);
+
+        Console.ReadKey();
+    }
+}
+
