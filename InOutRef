@@ -35,6 +35,26 @@ class Program
     {
         return x + y + z;
     }
+
+    public int sumArr(int[] a)
+    {
+        int s = 0;
+        foreach(int aa in a)
+        {
+            s += aa;
+        }
+        return s;
+    }
+    public int sumParam(params int[] a)
+    {
+        int s = 0;
+        foreach (int aa in a)
+        {
+            s += aa;
+        }
+        return s;
+    }
+
     static void Main(string[] args)
     {
         Program p = new Program();
@@ -60,6 +80,10 @@ class Program
         Console.WriteLine("Sum3(1,2,3) : " + p.sum3(1, 2, 3));
         Console.WriteLine("Sum3(1,2) : " + p.sum3(1,2));
         Console.WriteLine("Sum3(1) : " + p.sum3(1));
+        int[] arr = { 1, 2, 3, 4 };
+        Console.WriteLine("p.sumArr(arr): " + p.sumArr(arr));
+        Console.WriteLine("new int[] { 1, 2, 3 }): " + p.sumArr((new int[] { 1, 2, 3 })));
+        Console.WriteLine("p.sumParam(1,2,3,4): " + p.sumParam(1,2,3,4));
         Console.ReadKey();
     }
 }
