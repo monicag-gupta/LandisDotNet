@@ -1,0 +1,98 @@
+Write a program in C# to accept two numbers as command line arguments and display all the prime numbers between the given two numbers. 
+If the first number is greater than the second then the numbers are displayed in descending order otherwise they are displayed in ascending order.
+Eg if the args are 3 and 20 , the program should display
+5, 7, 11, 13, 17, 19
+Eg if the args are 20 and 3 , the program should display
+19, 17, … 5
+
+
+
+
+Write a Menu driven C# Sharp program to print on screen the output of either adding, subtracting, multiplying and dividing of two numbers 
+which will be entered by the user.
+
+Write a C# program to find the largest and lowest values from three integer values.
+
+Write a C# program to compute the sum of all the elements of an array of integers. 
+Test Data:
+Array1: [1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1]
+Solution: Sum: 69
+
+
+
+
+Write a C# Sharp program that takes a number as input and print its multiplication table.
+
+Write a C# Sharp program that takes four numbers as input to calculate and print the average.
+
+Write a C# program to convert from celsius degrees to Kelvin and Fahrenheit.
+
+Write a C# program to print the sum of digits of a number.
+
+Write a C# program to convert a 
+hexadecimal number to decimal number and vice versa.
+binary number to decimal number and vice versa.
+octal number to decimal number and vice versa.
+
+
+
+Write a C# program to check if a given string is a palindrome or not.
+
+Write a C# program to find the largest and smallest element of an integer array.
+
+Write a C# program to sort the integers in ascending order in an array.
+
+Write a C# program to check if a given number present in an array of numbers.
+
+Write a C# Sharp program to multiply all of elements of a given array of numbers by the array length.
+
+
+
+
+
+Write a C# Sharp program to remove the first and last elements from a given string.
+
+Write a C# Sharp program to get the ASCII value of a given character.
+
+Write a C# Sharp program to find sum of squares of elements of a given array of integers.
+
+ Write a C# Sharp program to remove all vowels from a given string.
+
+Write a C# Sharp program to find the cumulative sum of an array of number. 
+A cumulative sum is a sequence of partial sums of a given sequence. For example, the cumulative sums of the sequence {x, y, z,...}, are x , x+y , x+y+z
+Orginal Array elements: 1 3 4 5 6 7
+Cumulative sum of the said array elements: 1 4 8 13 19 26
+
+
+
+Write a C# Sharp program to count positive and negative numbers in a given array of integers.
+
+Write a C# Sharp program to count number of ones and zeros in the binary representation of a given integer. Sample Output:
+Original number: 12
+Number of ones and zeros in the binary representation of the said number:
+Number of ones: 2
+Number of zeros: 2
+
+
+
+WAP in C# to return three int values from a function as square, cube and 10*x. Hint: use out parameter.
+WAP in C# to print the multiplication table for an input read only parameter. Hint: use in parameter.
+WAP in C# to return the product of two parameters. Since only one value is returned use a normal function call.
+WAP in C# to swap values of two variables. Hint: use ref parameters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
