@@ -82,6 +82,10 @@ WAP in C# to swap values of two variables. Hint: use ref parameters.
 
 
 
+Using params array of int values, find the minimum of a group of values passed as parameter.
+
+
+
 
 
 
