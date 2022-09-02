@@ -31,6 +31,10 @@ class Program
         x += 20;
         return x + y;
     }
+    public int sum3(int x, int y = 0, int z=0)
+    {
+        return x + y + z;
+    }
     static void Main(string[] args)
     {
         Program p = new Program();
@@ -53,7 +57,9 @@ class Program
         Console.WriteLine("h before value() : " + h);
         p.value(h);
         Console.WriteLine("h after value() : " + h);
-
+        Console.WriteLine("Sum3(1,2,3) : " + p.sum3(1, 2, 3));
+        Console.WriteLine("Sum3(1,2) : " + p.sum3(1,2));
+        Console.WriteLine("Sum3(1) : " + p.sum3(1));
         Console.ReadKey();
     }
 }
