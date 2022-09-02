@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Day3Prj1Methods
+{
+    public class Pa
+    {
+        public void google()
+        {
+            Console.WriteLine("I am the public Google in Day3Prj1Methods.Pa");
+        }
+        protected void AC()
+        {
+            Console.WriteLine("I am the protected BankA/C in Day3Prj1Methods.Pa");
+        }
+        private void CC()
+        {
+            Console.WriteLine("I am the private CC in Day3Prj1Methods.Pa");
+        }
+        protected internal void Shares()
+        {
+            Console.WriteLine("I am the protected internal shares in Day3Prj1Methods.Pa");
+        }
+       internal void Almirah()
+        {
+            Console.WriteLine("I am the internal Almirah in Day3Prj1Methods.Pa");
+        }
+        private protected void Audi()
+        {
+            Console.WriteLine("I am the private protected Audi in Day3Prj1Methods.Pa");
+        }
+    }
+    class CS : Pa
+    {
+        public void inheritedData()
+        {
+            Console.WriteLine("\nThis is ChandraShekhar(same Domain and Child) class");
+            google();
+            Audi();
+            Almirah();
+            AC();
+            Shares();
+        }
+    }
+    class RK
+    {
+        public void internalObjectData()
+        {
+            Console.WriteLine("\nThis is Ramu Kaka(same Domain) class");
+            Pa pa = new Pa();
+            pa.google();
+            pa.Almirah();
+            pa.Shares();
+        }
+    }
+    class Program
+    {
+        public static void Main(string[] s)
+        {
+            CS cs = new CS();
+            cs.inheritedData();
+            RK rk = new RK();
+            rk.internalObjectData();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+using System;
+using Day3Prj1Methods;
+
+namespace Day3Prj2Methods
+{
+    class Chandra : Pa
+    {
+        public void inheritedData()
+        {
+            Console.WriteLine("\nThis is Chandra(Child) class");
+            google();
+            AC();
+            Shares();
+        }
+    }
+    class Shekhar
+    {
+        public void externalObjectData()
+        {
+            Console.WriteLine("\nThis is Shekhar(Others) class");
+            Pa pa = new Pa();
+            pa.google();
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Chandra chandra = new Chandra();
+            chandra.inheritedData();
+            Shekhar shekhar =new Shekhar(); 
+            shekhar.externalObjectData();
+            
+        }
+    }
+}
