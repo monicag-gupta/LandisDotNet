@@ -1,0 +1,46 @@
+using System;
+class Emp //Encapsulation : Encapsulating Attributes and Behavior
+{
+    //Primitive variables start with small letter
+    //Underlying Objects start with Caps Letter
+    //Capitalize 1st letter of consecutive words
+
+    //Encapsulated Attributes with Private keyword: Data Hiding
+    private int empID;  
+    private string name;
+    private int salary;
+
+    //Abstracted Behavior with public Keyword
+    public void input(int id, string n, int sal)
+    {
+        empID = id;
+        name = n;
+        salary = sal;
+    }
+    public void input()
+    {
+        int id = 101;
+        string n = "Abc";
+        int sal = 5;
+        empID = id;
+        name = n;
+        salary = sal;
+    }
+    public void display()
+    {
+        Console.WriteLine("\nEmp Details: EmpID: " + empID + " Name: " + name + " Salary: " + salary);
+    }
+
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Emp emp = new Emp();
+        emp.input(101, "Abc", 5);
+        emp.display();
+        Console.ReadLine();
+
+    }
+}
+
