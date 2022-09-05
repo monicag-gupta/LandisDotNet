@@ -1,4 +1,7 @@
 using System;
+using System.Security.Cryptography;
+using System.Threading;
+
 class Emp //Encapsulation : Encapsulating Attributes and Behavior
 {
     //Primitive variables start with small letter
@@ -9,6 +12,28 @@ class Emp //Encapsulation : Encapsulating Attributes and Behavior
     private int empID;  
     private string name;
     private int salary;
+
+//    Overloading of functions: Compile time polymorphism
+//Same function name with different output
+//Overloading : 
+//parameters should be different
+//Return type does not matter(compiler does not identify the functions with returned values; rather identifies by only parameters)
+//Three ways to polymorph:
+//1. Number of parameters are different: 
+//Actual different number of parameters
+//Default values of parameters
+//Using params parameter
+//2. Parameter data type is different
+//Overloading
+//Operator Overloading
+//3. Parameter data type series is different
+
+
+
+
+
+
+
 
     //Abstracted Behavior with public Keyword
     public void input(int id, string n, int sal) //case fn1
