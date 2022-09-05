@@ -1,0 +1,80 @@
+using System;
+class Animal
+{
+    public virtual void eat()
+    {
+        Console.WriteLine("Animal eats!");
+    }
+    public virtual void sleep()
+    {
+        Console.WriteLine("Animal sleeps!");
+    }
+    public void walk()
+    {
+        Console.WriteLine("Animal walks!");
+    }
+}
+class Dog : Animal
+{
+    public override void eat()
+    {
+        Console.WriteLine("Dog eats!");
+    }
+    public void bark()
+    {
+        Console.WriteLine("Dog barks!");
+    }
+}
+class Cat : Animal
+{
+    public void meow()
+    {
+        Console.WriteLine("Cat meows!");
+    }
+}
+class Elephant : Animal
+{
+    public override void eat()
+    {
+        Console.WriteLine("Elephant eats with its trunk!");
+    }
+    public void speed()
+    {
+        Console.WriteLine("Elephant is faster than most jungle Animals");
+    }
+}
+class AnimalTrainer
+{
+    public void train(Animal a) //generalization
+    {
+        Console.WriteLine("\n\nA new Animal: ");
+        a.sleep();
+        a.eat();
+        a.walk();
+        if (a is Dog)
+        {
+            Dog d = (Dog)a;  //specialization
+            d.bark();
+        }
+        if (a is Cat)
+        {
+            Cat c = (Cat)a;
+            c.meow();
+        }
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Dog d = new Dog();
+        AnimalTrainer t=new AnimalTrainer();
+        t.train(d);     //specialization
+        Cat c = new Cat();
+        t.train(c);
+        t.train(new Elephant());
+        Console.ReadLine();
+
+    }
+}
+
