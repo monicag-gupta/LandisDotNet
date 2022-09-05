@@ -51,9 +51,14 @@ class AnimalTrainer
         a.sleep();
         a.eat();
         a.walk();
-        if (a is Dog)
+        //if (a is Dog)
+        //{
+        //    Dog d = (Dog)a;  //specialization
+        //    d.bark();
+        //}
+        Dog d=(a as Dog);
+        if(d != null)
         {
-            Dog d = (Dog)a;  //specialization
             d.bark();
         }
         if (a is Cat)
