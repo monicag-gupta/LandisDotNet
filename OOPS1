@@ -11,24 +11,42 @@ class Emp //Encapsulation : Encapsulating Attributes and Behavior
     private int salary;
 
     //Abstracted Behavior with public Keyword
-    public void input(int id, string n, int sal)
+    public void input(int id, string n, int sal) //case fn1
     {
         empID = id;
         name = n;
         salary = sal;
     }
-    public void input()
+    public void input() //Case fn2 : overloading fn1 as different no. of parameters
     {
-        int id = 101;
-        string n = "Abc";
-        int sal = 5;
+        Console.WriteLine("Enter Emp Details: \nEnter Emp ID: ");
+        int id = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter Emp Name: ");
+        string n = Console.ReadLine();
+        Console.WriteLine("Enter Emp Salary: ");
+        int sal = Convert.ToInt32(Console.ReadLine()); 
         empID = id;
         name = n;
         salary = sal;
     }
+    public void input(string n, int sal, int id) //case fn3 : overloading fn1 as different series of data type of parameters
+    {
+        empID = id;
+        name = n;
+        salary = sal;
+    }
+
     public void display()
     {
         Console.WriteLine("\nEmp Details: EmpID: " + empID + " Name: " + name + " Salary: " + salary);
+    }
+    public string norms(int normSal) //fn4
+    {
+        return "Salary is : " + (salary >= normSal ? "above norm!" : "below norm:(");
+    }
+    public string norms(double normSal)  //fn5 : overloading fn4 as different data type of parameter
+    {
+        return "Salary is : " + ((double)salary >= normSal ? "above norm!" : "below norm:(");
     }
 
 }
@@ -37,8 +55,18 @@ class Program
     static void Main(string[] args)
     {
         Emp emp = new Emp();
-        emp.input(101, "Abc", 5);
+        emp.input();
         emp.display();
+        Console.WriteLine(emp.norms(12));
+
+        emp.input(101, "Abc", 10);
+        emp.display();
+        Console.WriteLine(emp.norms(12));
+
+        emp.input("Xyz", 20, 102);
+        emp.display();
+        Console.WriteLine(emp.norms(12));
+
         Console.ReadLine();
 
     }
