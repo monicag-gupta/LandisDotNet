@@ -1,0 +1,156 @@
+using System;
+interface A1 //100% abstraction layer
+{
+    void A1fn1();
+    void A1fn2();
+}
+interface A2
+{
+    void A2fn1();
+    void A2fn2();
+}
+
+interface B1 : A1, A2 //Inheritance of interfaces
+{
+
+}
+class B4 : B1  //implementation of interfaces
+{
+    public void A1fn1() //implemented methods
+    {
+        Console.WriteLine("Generalized function A1fn1 for B2");
+    }
+    public void A1fn2()
+    {
+        Console.WriteLine("Generalized function A1fn2 for B2");
+    }
+    public void A2fn1()
+    {
+        Console.WriteLine("Generalized function A2fn1 for B2");
+    }
+    public void A2fn2()
+    {
+        Console.WriteLine("Generalized function A2fn2 for B2");
+    }
+
+}
+class B2 : A1, A2
+{
+    public void A1fn1()
+    {
+        Console.WriteLine("Generalized function A1fn1 for B2");
+    }
+    public void A1fn2()
+    {
+        Console.WriteLine("Generalized function A1fn2 for B2");
+    }
+    public void A2fn1()
+    {
+        Console.WriteLine("Generalized function A2fn1 for B2");
+    }
+    public void A2fn2()
+    {
+        Console.WriteLine("Generalized function A2fn2 for B2");
+    }
+
+}
+
+abstract class B3: A1, A2   //100% abstracted
+{
+    public abstract void A2fn2();   //abstracted methods
+    public abstract void A2fn1();
+    public abstract void A1fn1();
+    public abstract void A1fn2();
+}
+class B5 : B3  //inheritance by concrete class from abstracted class
+{
+    public override void A1fn1()  //override all the abstract methods
+    {
+        Console.WriteLine("Generalized function A1fn1 for B2");
+    }
+    public override void A1fn2()
+    {
+        Console.WriteLine("Generalized function A1fn2 for B2");
+    }
+    public override void A2fn1()
+    {
+        Console.WriteLine("Generalized function A2fn1 for B2");
+    }
+    public override void A2fn2()
+    {
+        Console.WriteLine("Generalized function A2fn2 for B2");
+    }
+
+}
+abstract class A    //0 -100% abstraction
+{  //50% abstracted
+    public void fnA() //implemented
+    {
+        Console.WriteLine("General function for all objects in the hierarchy of A");
+    }
+    public abstract void fnA2();
+}
+
+class B : A
+{
+    public void fnB()
+    {
+        Console.WriteLine("Specialized function for B");
+    }
+    public override void fnA2()
+    {
+        Console.WriteLine("Generalized function fnA2 for B");
+    }
+}
+class C : A
+{
+    public void fnC()
+    {
+        Console.WriteLine("Specialized function for C");
+    }
+    public override void fnA2()
+    {
+        Console.WriteLine("Generalized function fnA2 for C");
+    }
+}
+
+//class Emp
+//{
+//    int empId;
+//    string name;
+//    public Emp()
+//    {
+
+//    }
+//    public void fn()
+//    {
+//        Console.WriteLine(empId);
+//        Console.WriteLine((name == null ? "Null name" : name));
+//    }
+
+
+//}
+
+
+
+class Program
+{
+    static void fw(A a)
+    {
+        a.fnA();
+        a.fnA2();
+    }
+    
+    static void Main(string[] args)
+    {
+        A a1 = new B();
+        a1.fnA();
+        B a2 = new B();
+        a2.fnA();
+        a2.fnB();
+        fw(new B());
+        
+ 
+    }
+}
+
