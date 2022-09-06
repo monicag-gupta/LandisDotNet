@@ -1,0 +1,49 @@
+using System;
+//class Emp
+//{
+//    int empId;
+//    string name;
+//    public Emp()
+//    {
+
+//    }
+//    public void fn()
+//    {
+//        Console.WriteLine(empId);
+//        Console.WriteLine((name == null ? "Null name":name));
+//    }
+
+
+//}
+
+class Str
+{
+    public string n;
+    public Str(string nn)
+    {
+        n = nn;
+    }
+    public bool eql(Str s1)
+    {
+        return n == s1.n;
+
+    }
+}
+
+class Program
+{
+    
+    
+    static void Main(string[] args)
+    {
+        Str s1 = new Str("Abc");
+        Str s2 = new Str("Abc");
+        Console.WriteLine("S1==s2? :" + (s1 == s2));
+        Console.WriteLine("S1.eql(s2)? :" + (s1.eql(s2)));
+        string str = "Xyz";
+        Console.WriteLine("str==\"Xyz\"? :" + (str == "Xyz"));
+        Console.WriteLine("str.equals(\"Xyz\")? :" + (str.Equals("Xyz")));
+
+    }
+}
+
