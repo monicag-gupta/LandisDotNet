@@ -1,0 +1,38 @@
+using System;
+class Program
+{
+    static int recFunSum(int x)
+    {
+        if (x <= 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return x + recFunSum(x - 1);
+        }
+
+    }
+    static void recFn(int x)
+    {
+        if (x <= 0)
+        {
+            Console.WriteLine(x);
+        }
+        else
+        {
+            Console.WriteLine(x);
+            recFn(x - 1);
+        }
+    }
+    
+    static void Main(string[] args)
+    {
+        int x = 10;
+        recFn(x);
+        int sum = recFunSum(x);
+        Console.WriteLine("10 + 9 + ... + 0 : " + sum);
+
+    }
+}
+
