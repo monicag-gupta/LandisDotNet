@@ -1,0 +1,21 @@
+using System;
+class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+}
+
+
+class Program
+{
+
+    static void Main(string[] args)
+    {
+        Person person = new Person { Name = "Abc", Age = 100 }; //Initializer
+        Console.WriteLine(person.Name);
+        Console.WriteLine(person.Age);
+
+    }
+}
+
