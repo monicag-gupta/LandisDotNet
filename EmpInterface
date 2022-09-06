@@ -1,0 +1,75 @@
+using System;
+
+interface EmpHandBook
+{
+    void sign();
+}
+
+interface Appointment
+{
+    void letter();
+}
+abstract class Emp
+{
+    int EmpID;
+    string Name;
+    public void input()
+    {
+        Console.WriteLine("Enter the EmpID: ");
+        int id = Convert.ToInt32(Console.ReadLine());
+        EmpID = id;
+        Console.WriteLine("Enter the name: ");
+        string name = Console.ReadLine();
+        Name = name;
+    }
+    public virtual void print()
+    {
+        Console.WriteLine("Emp details: \nEmpID: " + EmpID + " Name: " + Name);
+    }
+    public abstract void profile();
+}
+class DotNetEmp : Emp, Appointment, EmpHandBook
+{
+    string skills;
+    public void sign()
+    {
+        Console.WriteLine("Signed Emp Handbook!");
+    }
+    public void letter()
+    {
+        Console.WriteLine("Signed Appointment Letter!");
+    }
+    public override void profile()
+    {
+        
+        skills = "DotNet";
+
+    }
+    public override void print()
+    {
+        base.print();
+        Console.WriteLine("And Profile: DotNet Developer");
+    }
+}
+class Program
+{
+    
+    static void Main(string[] args)
+    {
+        EmpHandBook e1 = new DotNetEmp();
+        e1.sign();
+        Appointment e2 = new DotNetEmp();
+        e2.letter();
+        Emp e3 = new DotNetEmp();
+        e3.input();
+        e3.profile();
+        e3.print();
+        DotNetEmp e4 = new DotNetEmp();
+        e4.letter();
+        e4.sign();
+        e4.profile();
+        e4.input();
+        e4.print();
+    }
+}
+
