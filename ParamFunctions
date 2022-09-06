@@ -1,0 +1,38 @@
+using System;
+class Program
+{
+    static void fn1(in int x)
+    {
+        Console.WriteLine("Read Only parameter: in int x : " + x);
+        //x = 10;
+    }
+    static void fn2(out int x)
+    {
+        x = 20;
+        Console.WriteLine("Output Unassigned parameter: out int x : " + x);
+    }
+    static void fn3(ref int x)
+    {
+        Console.WriteLine("Ref parameter: ref int x : " + x);
+        x = 10;
+    }
+    static void fn4(int x)
+    {
+        Console.WriteLine("Normal value type parameter: int x : " + x);
+        x = 30;
+    }
+    static void Main(string[] args)
+    {
+        int x = 100;
+        fn1(in x);
+        Console.WriteLine("After : in int x : " + x); //100
+        fn2(out x);
+        Console.WriteLine("After : out int x : " + x); //20
+        fn3(ref x);
+        Console.WriteLine("After : ref int x : " + x); //10
+        fn4(x);
+        Console.WriteLine("After : normal int x : " + x); //10
+
+    }
+}
+
