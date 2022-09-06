@@ -1,0 +1,161 @@
+using System;
+using System.Security.Cryptography;
+using System.Threading;
+using System.Xml.Linq;
+
+class Emp //Encapsulation : Encapsulating Attributes and Behavior
+{
+    //Primitive variables start with small letter
+    //Underlying Objects start with Caps Letter
+    //Capitalize 1st letter of consecutive words
+
+    //Encapsulated Attributes with Private keyword: Data Hiding
+    private int empID;  
+    private string name;
+    private int salary;
+
+//    Overloading of functions: Compile time polymorphism
+//Same function name with different output
+//Overloading : 
+//parameters should be different
+//Return type does not matter(compiler does not identify the functions with returned values; rather identifies by only parameters)
+//Three ways to polymorph:
+//1. Number of parameters are different: 
+//Actual different number of parameters
+//Default values of parameters
+//Using params parameter
+//2. Parameter data type is different
+//Overloading
+//Operator Overloading
+//3. Parameter data type series is different
+
+
+
+
+
+
+
+
+    //Abstracted Behavior with public Keyword
+    public void input(int id, string n, int sal) //case fn1
+    {
+        empID = id;
+        name = n;
+        salary = sal;
+    }
+    public void input() //Case fn2 : overloading fn1 as different no. of parameters
+    {
+        Console.WriteLine("Enter Emp Details: \nEnter Emp ID: ");
+        int id = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter Emp Name: ");
+        string n = Console.ReadLine();
+        Console.WriteLine("Enter Emp Salary: ");
+        int sal = Convert.ToInt32(Console.ReadLine()); 
+        empID = id;
+        name = n;
+        salary = sal;
+    }
+    public void input(string n, int sal, int id) //case fn3 : overloading fn1 as different series of data type of parameters
+    {
+        empID = id;
+        name = n;
+        salary = sal;
+    }
+
+    public virtual void display()
+    {
+        Console.WriteLine("\nEmp Details: EmpID: " + empID + " Name: " + name + " Salary: " + salary);
+    }
+    public string norms(int normSal) //fn4
+    {
+        return "Salary is : " + (salary >= normSal ? "above norm!" : "below norm:(");
+    }
+    public string norms(double normSal)  //fn5 : overloading fn4 as different data type of parameter
+    {
+        return "Salary is : " + ((double)salary >= normSal ? "above norm!" : "below norm:(");
+    }
+
+}
+class Mngr : Emp
+{
+    private int teamSize;
+    public void SetTeamSize(int team)
+    {
+        teamSize = team;
+    }
+    public override void display()
+    {
+        base.display();
+        Console.WriteLine("The team Size for the Manager is: " + teamSize);
+    }
+}
+class Dev : Emp
+{
+    private string teamLeader;
+    public void SetTL(string team)
+    {
+        teamLeader = team;
+    }
+    public override void display()
+    {
+        base.display();
+        Console.WriteLine("The team Leader for the Developer is: " + teamLeader);
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Emp emp = new Emp();
+        emp.input();
+        emp.display();
+        Console.WriteLine(emp.norms(12));
+
+        emp.input(101, "Abc", 10);
+        emp.display();
+        Console.WriteLine(emp.norms(12));
+
+        emp.input("Xyz", 20, 102);
+        emp.display();
+        Console.WriteLine(emp.norms(12));
+
+        //Generalization: generalize the properties and attributes and behavior 
+        //of child classes into the parent class.
+        Emp mngr = new Mngr();  // Generalization
+        Emp dev = new Dev(); //Generalization
+
+        mngr.input("Mngr1", 80, 109);
+        dev.input("SME:.Net", 12, 110);
+
+
+        //Specialization is the typecasting of the specialized object into  
+        //it's own subclass (Specialized class)
+        //Mngr m = new Emp();
+        //Mngr m = (Mngr)mngr;  //Specialization
+        //Mngr m2 = (Mngr)dev;
+
+
+        //Mngr m = null;
+        //Dev d = null;
+        //if (mngr is Mngr)
+        //    m = (Mngr)mngr;
+
+        //is equivalent to 
+
+        Mngr m = mngr as Mngr;
+
+
+        if(m != null)
+        {
+            m.SetTeamSize(10);
+            m.display();
+        }
+        
+
+
+
+        Console.ReadLine();
+
+    }
+}
+
