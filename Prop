@@ -1,0 +1,75 @@
+using System;
+class Person
+{
+    private string _name;
+    public int Id { get; set; }
+    public string Name
+    {
+        get
+        {
+            if (_name == null)
+                return "Null Name";
+            return _name;
+        }
+        set
+        {
+            if (value == null)
+            {
+                Console.WriteLine("Name can not be null!");
+                _name = "Empty Name";
+            }
+            else
+                _name = value;
+
+        }
+    }
+    private int _age;
+    public int Age
+    {
+        get
+        {
+            return _age;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                _age = 0;
+            }
+            else
+                _age = value;
+        }
+    }
+    private string countryName = "India";
+    public string CountryName
+    {
+        get
+        {
+            return countryName;
+        }
+    }
+
+}
+
+
+class Program
+{
+
+    static void Main(string[] args)
+    {
+        Person person = new Person();
+        Console.WriteLine(person.Name); //Null Name
+        person.Name = null;  //Name can not be null!
+        Console.WriteLine(person.Name);  //Empty Name
+        person.Name = "Abc";
+        Console.WriteLine(person.Name); //Abc
+        //person.CountryName = "UK";
+        Console.WriteLine(person.CountryName); //India
+        person.Age = -100;
+        Console.WriteLine(person.Age); //0
+        person.Age = 100;
+        Console.WriteLine(person.Age); //100
+
+    }
+}
+
