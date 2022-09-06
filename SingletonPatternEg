@@ -1,0 +1,48 @@
+using System;
+//class Emp
+//{
+//    int empId;
+//    string name;
+//    public Emp()
+//    {
+
+//    }
+//    public void fn()
+//    {
+//        Console.WriteLine(empId);
+//        Console.WriteLine((name == null ? "Null name":name));
+//    }
+
+
+//}
+
+
+class SingleObj
+{
+    private static SingleObj singleObj;
+    public string msg = "Hello";
+    public static SingleObj getSingleObj()
+    {
+        if(singleObj==null){
+            singleObj=new SingleObj();
+        }
+        return singleObj;
+    }
+    //private SingleObj() { }
+}
+class Program
+{
+    
+    
+    static void Main(string[] args)
+    {
+        SingleObj obj1 = new SingleObj();//SingleObj.getSingleObj();
+        Console.WriteLine(obj1.msg);
+        SingleObj obj2 = SingleObj.getSingleObj();
+        obj2.msg = "This is from Obj2";
+        Console.WriteLine(obj1.msg);
+        Console.WriteLine(obj1==obj2?"Same Obj":"Not same obj");
+
+    }
+}
+
