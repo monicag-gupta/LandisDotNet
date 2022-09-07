@@ -1,0 +1,36 @@
+using System;
+class Person
+{
+    int id;
+    string name;
+
+    public Person()
+    {
+    }
+
+    public Person(int id, string name)
+    {
+        this.id = id;
+        this.name = name;
+    }
+
+    public override string ToString()
+    {
+        return "This is my class Person with ID: " + id + " and Name : " + name;
+    }
+}
+class Program
+{
+    
+    static void Main(string[] args)
+    {
+        Person p = new Person(102, "Abc");
+        //object class has a virtual function called ToString() 
+        //which returns the classname of the object as Object 
+        //In this case p's class name is Person
+        Console.WriteLine(p); //ToString() of current class
+
+    
+    }
+}
+
