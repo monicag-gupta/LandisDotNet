@@ -79,3 +79,48 @@ class Program
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+class Program
+{
+    
+    static void Main(string[] args)
+    {
+        try
+        {
+            try
+            {
+                throw new DivideByZeroException("Odd Arg Exception");
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("Partially Handling :" + e.Message);
+                throw new FormatException("This is another Exception", e);
+            }
+        }
+        catch (Exception e1)
+        {
+            Console.WriteLine("Next Partially Handling :" + e1.Message); //This is another Exceptio
+            Console.WriteLine("Next InnerException Handling :" + e1.InnerException.Message); //Odd Arg Exception
+
+        }
+        
+
+    
+    }
+}
+
+
