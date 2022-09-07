@@ -1,0 +1,41 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int x = 0;
+        int y = 0;
+        while (true)
+        {
+            try
+            {
+                Console.WriteLine("To exit enter (-1) in next input:");
+                Console.WriteLine("Enter x: ");
+                x = Convert.ToInt32(Console.ReadLine());
+                if (x == -1)
+                    break;
+                Console.WriteLine("Enter y: ");
+                y = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("The division result: {0}", (x / y));
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (System.IO.IOException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+}
+
