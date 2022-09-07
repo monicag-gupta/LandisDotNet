@@ -1,0 +1,38 @@
+using System;
+class A
+{
+    public A(int[] a, int i)
+    {
+        Console.WriteLine("\nEnter a number");
+        a[i] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+
+class Program
+{
+    
+    static void Main(string[] args)
+    {
+        int[] a = new int[20];
+        int i = 0;
+        a[i++] = 10;
+        a[i++] = 20;
+        for (int j = 0; j < i; j++)
+        {
+            Console.Write(a[j] + "  ");
+        }
+        new A(a, i);
+        for(int j=0;j<=i;j++)
+        {
+            Console.Write(a[j] + "  ");
+        }
+        Console.WriteLine();
+       
+ 
+
+
+
+    }
+}
+
