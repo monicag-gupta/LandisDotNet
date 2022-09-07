@@ -39,3 +39,43 @@ class Program
     }
 }
 
+
+
+
+
+
+
+
+
+using System;
+class Program
+{
+    public int print(string s)
+    {
+        int x = 0;
+        try
+        {
+            x = Convert.ToInt32(s);
+            Console.WriteLine("Resource used : " + x);
+
+        }
+        catch (FormatException e)
+        {
+            Console.WriteLine(e.Message);
+            return 0;
+        }
+        finally
+        {
+            Console.WriteLine("{0} is closed", s);
+        }
+        return x;
+
+    }
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Returned value of 12 is : " + (new Program().print("12")));
+
+        Console.WriteLine("Returned value of a is : "+ (new Program().print("a")));
+    }
+}
+
