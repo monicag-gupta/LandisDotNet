@@ -4,9 +4,8 @@ class AgeException : ApplicationException
     
     public string AgeMessage { get; }
     public AgeException() { }
-    public AgeException(string msg) { 
+    public AgeException(string msg): base("This is a user defined Exception for Age: (Age has to be in 0-150 only) but is: " + msg) { 
         this.AgeMessage = "This is a user defined Exception for Age: (Age has to be in 0-150 only) but is: " + msg;
-       
     }
     public override string ToString()
     {
@@ -45,6 +44,8 @@ class Program
         }
         catch (AgeException e)
         {
+            Console.WriteLine(e.Message);
+            Console.WriteLine(e);
             Console.WriteLine(e.AgeMessage);
         }
 
