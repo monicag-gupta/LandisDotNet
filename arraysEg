@@ -1,0 +1,21 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[,] mat = new int[2, 3];
+        int i, j;
+        for (i = 0; i < 2; i++)
+            for (j = 0; j < 3; j++)
+                mat[i, j] = (i+1) * (j+1);
+        for (i = 0; i < 2; i++)
+        {
+            for (j = 0; j < 3; j++)
+                Console.Write(mat[i, j] + "\t");
+            Console.WriteLine("\n");
+        }
+        Console.ReadKey();
+                
+    }
+}
+
