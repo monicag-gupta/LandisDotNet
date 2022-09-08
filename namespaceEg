@@ -1,0 +1,52 @@
+using System;
+using Model;
+using View;
+using C;
+
+namespace A
+{
+    class A1
+    {
+        public void fn()
+        {
+            Console.WriteLine("A :: A1 . Fn() ");
+        }
+    }
+    namespace B
+    {
+        class A1
+        {
+            public void fn()
+            {
+                Console.WriteLine("A :: B :: A1 . Fn() ");
+            }
+        }
+
+    }
+}
+namespace C
+{
+    class A1
+    {
+        public void fn()
+        {
+            Console.WriteLine("C :: A1 . Fn() ");
+        }
+    }
+}
+
+
+namespace Controller
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            A.B.A1 a1 = new A.B.A1();
+            a1.fn(); //A::B::A1.fn()
+            A1 a2 = new A1();
+            a2.fn(); //C::A1.fn()
+            Console.ReadLine();
+        }
+    }
+}
