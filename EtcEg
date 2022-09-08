@@ -1,85 +1,133 @@
 using System;
+//class A
+//{
+//    public static int x;
+//    static A()
+//    {
+//        x = 20;
+//        Console.WriteLine("This is called only once: x=" + x);
+//    }
+//    public static void fn()
+//    {
+//        Console.WriteLine("This is static fn()");
+//    }
+//    public A()
+//    {
+//        Console.WriteLine("This is non-static constructor");
+//    }
+//    ~A()
+//    {
+//        Console.WriteLine("This is the destructor");
+
+//    }
+//}
+
+
 class A
 {
-    public static int x;
-    static A()
+    public int x;
+    public B b;
+    public A() { x = 0; b = new B(); }
+    public A(int x, B b) { this.x = x; this.b = b; }
+    //copy constructor //deep copy
+    public A(A a)
     {
-        x = 20;
-        Console.WriteLine("This is called only once: x=" + x);
+        this.x= a.x;
+        //this.b = a.b;
+        this.b = new B(a.b.y);
     }
-    public static void fn()
-    {
-        Console.WriteLine("This is static fn()");
-    }
-    public A()
-    {
-        Console.WriteLine("This is non-static constructor");
-    }
-    ~A()
-    {
-        Console.WriteLine("This is the destructor");
 
-    }
 }
+class B
+{
+    public int y;
+    public B() { y = 0; }
+    public B(int y) { this.y = y; }
+}
+
+
 class Program
 {
     static void Main(string[] args)
     {
-        {
-            A.fn();
-            A a = new A();
-        }
-        //int? x = null;
-        //string s1 = null;
-        //string s2 = "Abc";
-        ////s3=s1 if s1 is not null else it is Bcd
-        //string s3 = s1 ?? "Bcd";
-        //Console.WriteLine(s3); //Bcd
-        //string s4 = s2 ?? "EFG";
-        //Console.WriteLine(s4); //Abc
+        B b = new B(20);
+        A a1 = new A(10, b);
+        A a2 = a1;  //shallow copy
+        a1.x = 90;
+        a1.b.y = 70;
+        Console.WriteLine("A1: "+ a1.x + "   " + a1.b.y);//90, 70
+        Console.WriteLine("A2: "+ a2.x + "   "+ a2.b.y);//90, 70
+        A a3 = new A(a1);
+        a1.x=120;
+        a1.b.y = 40;
+        Console.WriteLine("A1: " + a1.x + "   " + a1.b.y);//120, 40
+        Console.WriteLine("A3: " + a3.x + "   " + a3.b.y);//90, 70
 
 
 
 
+        int x = 10;
+        int y = x;
+        x = 20;
+        //y remains to be 10.
 
-        //// The following example causes compiler error CS0220 because 2147483647  is the maximum value for integers.
-        ////int i1 = 2147483647 + 10;
-        //// The following example, which includes variable ten, does not cause a compiler error.
-        //int ten = 10;
-        //int i2 = 2147483647 + ten;
-        //// By default, the overflow in the previous statement also does not cause a run-time 
-        //// exception. The following line displays -2,147,483,639 as the sum of 2,147,483,647 and 10.
-        //Console.WriteLine(i2);
-        //// If the previous sum is attempted in a checked environment, an OverflowException error is raised.
-        //// Checked expression:
-        //Console.WriteLine(checked(2147483647 + ten)); //error raised at this point.
-        //// Checked block:
-        //checked
+
+
         //{
-        //    int i3 = 2147483647 + ten;
-        //    Console.WriteLine(i3);
+        //    A.fn();
+        //    A a = new A();
         //}
+        ////int? x = null;
+        ////string s1 = null;
+        ////string s2 = "Abc";
+        //////s3=s1 if s1 is not null else it is Bcd
+        ////string s3 = s1 ?? "Bcd";
+        ////Console.WriteLine(s3); //Bcd
+        ////string s4 = s2 ?? "EFG";
+        ////Console.WriteLine(s4); //Abc
 
 
 
 
-        //// int.MaxValue is 2,147,483,647.
-        //const int ConstantMax = int.MaxValue;
-        //int int1;
 
-        //// The following statements are checked by default at compile time. They do not compile.
-        ////int1 = 2147483647 + 10;    //int1 = ConstantMax + 10;
+        ////// The following example causes compiler error CS0220 because 2147483647  is the maximum value for integers.
+        //////int i1 = 2147483647 + 10;
+        ////// The following example, which includes variable ten, does not cause a compiler error.
+        ////int ten = 10;
+        ////int i2 = 2147483647 + ten;
+        ////// By default, the overflow in the previous statement also does not cause a run-time 
+        ////// exception. The following line displays -2,147,483,639 as the sum of 2,147,483,647 and 10.
+        ////Console.WriteLine(i2);
+        ////// If the previous sum is attempted in a checked environment, an OverflowException error is raised.
+        ////// Checked expression:
+        ////Console.WriteLine(checked(2147483647 + ten)); //error raised at this point.
+        ////// Checked block:
+        ////checked
+        ////{
+        ////    int i3 = 2147483647 + ten;
+        ////    Console.WriteLine(i3);
+        ////}
 
-        //// To enable the assignments to int1 to compile and run, place them inside
-        //// an unchecked block or expression. The following statements compile and run.
-        //unchecked
-        //{
-        //    int1 = 2147483647 + 10;
-        //}
-        //int1 = unchecked(ConstantMax + 10);
 
-        //// The sum of 2,147,483,647 and 10 is displayed as -2,147,483,639.
-        //Console.WriteLine(int1);
+
+
+        ////// int.MaxValue is 2,147,483,647.
+        ////const int ConstantMax = int.MaxValue;
+        ////int int1;
+
+        ////// The following statements are checked by default at compile time. They do not compile.
+        //////int1 = 2147483647 + 10;    //int1 = ConstantMax + 10;
+
+        ////// To enable the assignments to int1 to compile and run, place them inside
+        ////// an unchecked block or expression. The following statements compile and run.
+        ////unchecked
+        ////{
+        ////    int1 = 2147483647 + 10;
+        ////}
+        ////int1 = unchecked(ConstantMax + 10);
+
+        ////// The sum of 2,147,483,647 and 10 is displayed as -2,147,483,639.
+        ////Console.WriteLine(int1);
 
 
 
