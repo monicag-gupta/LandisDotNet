@@ -1,0 +1,64 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int? x = null;
+        string s1 = null;
+        string s2 = "Abc";
+        //s3=s1 if s1 is not null else it is Bcd
+        string s3 = s1 ?? "Bcd";
+        Console.WriteLine(s3); //Bcd
+        string s4 = s2 ?? "EFG";
+        Console.WriteLine(s4); //Abc
+
+
+
+
+
+        // The following example causes compiler error CS0220 because 2147483647  is the maximum value for integers.
+        //int i1 = 2147483647 + 10;
+        // The following example, which includes variable ten, does not cause a compiler error.
+        int ten = 10;
+        int i2 = 2147483647 + ten;
+        // By default, the overflow in the previous statement also does not cause a run-time 
+        // exception. The following line displays -2,147,483,639 as the sum of 2,147,483,647 and 10.
+        Console.WriteLine(i2);
+        // If the previous sum is attempted in a checked environment, an OverflowException error is raised.
+        // Checked expression:
+        Console.WriteLine(checked(2147483647 + ten)); //error raised at this point.
+        // Checked block:
+        checked
+        {
+            int i3 = 2147483647 + ten;
+            Console.WriteLine(i3);
+        }
+
+
+
+
+        // int.MaxValue is 2,147,483,647.
+        const int ConstantMax = int.MaxValue;
+        int int1;
+
+        // The following statements are checked by default at compile time. They do not compile.
+        //int1 = 2147483647 + 10;    //int1 = ConstantMax + 10;
+
+        // To enable the assignments to int1 to compile and run, place them inside
+        // an unchecked block or expression. The following statements compile and run.
+        unchecked
+        {
+            int1 = 2147483647 + 10;
+        }
+        int1 = unchecked(ConstantMax + 10);
+
+        // The sum of 2,147,483,647 and 10 is displayed as -2,147,483,639.
+        Console.WriteLine(int1);
+
+
+
+
+        Console.ReadKey();
+    }
+}
+
