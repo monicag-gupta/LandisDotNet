@@ -1,4 +1,4 @@
-using System;
+using sys=System;
 using Model;
 using View;
 using C;
@@ -9,7 +9,7 @@ namespace A
     {
         public void fn()
         {
-            Console.WriteLine("A :: A1 . Fn() ");
+            sys::Console.WriteLine("A :: A1 . Fn() ");
         }
     }
     namespace B
@@ -18,7 +18,7 @@ namespace A
         {
             public void fn()
             {
-                Console.WriteLine("A :: B :: A1 . Fn() ");
+                System.Console.WriteLine("A :: B :: A1 . Fn() ");
             }
         }
 
@@ -30,7 +30,7 @@ namespace C
     {
         public void fn()
         {
-            Console.WriteLine("C :: A1 . Fn() ");
+            sys::Console.WriteLine("C :: A1 . Fn() ");
         }
     }
 }
@@ -46,7 +46,8 @@ namespace Controller
             a1.fn(); //A::B::A1.fn()
             A1 a2 = new A1();
             a2.fn(); //C::A1.fn()
-            Console.ReadLine();
+            System.Windows.Forms.MessageBox.Show("Hello World (Press OK!)");
+            sys::Console.ReadLine();
         }
     }
 }
