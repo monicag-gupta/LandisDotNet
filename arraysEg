@@ -14,6 +14,27 @@ class Program
                 Console.Write(mat[i, j] + "\t");
             Console.WriteLine("\n");
         }
+        Console.WriteLine("Length of mat: " + mat.Length);
+
+
+        int[][] arr = new int[2][];
+        //arr[0] = new int[4];
+        //arr[1] = new int[10];
+        for (i = 0; i < 2; i++)
+            arr[i] = new int[3];
+
+        for (i = 0; i < 2; i++)
+            for (j = 0; j < 3; j++)
+               arr[i][j] = (i + 1) * (j + 1);
+        for (i = 0; i < 2; i++)
+        {
+            for (j = 0; j < 3; j++)
+                Console.Write(arr[i][j] + "\t");
+            Console.WriteLine("\n");
+        }
+
+        Console.WriteLine("Length of arr: " + arr.Length);
+
         Console.ReadKey();
                 
     }
