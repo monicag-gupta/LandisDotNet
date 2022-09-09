@@ -1,0 +1,130 @@
+1. (overloading)
+Max(int, int) : maximum value of the arguments : max(4,5) return 5
+Max(double, double) : maximum value of the arguments : max(4.9,5.6) return 5.6
+Max(double, double, int) : maximum value of the double numbers according to their decimal precision: max(4.9,5.6,0) return 4.9 (because .9 from 4.9 is more than .6 of 5.6)
+
+
+
+
+2. Paint(Shape s, color c) p;
+P.draw() -> the shape with the color
+Shapes can be triangle, square, line, rectangle, circle
+Color can be blue, green, black, white
+
+
+
+
+
+3. Create an Employee Class with following properties:
+Attributes: Name, Age, Sal (double), Id
+Methods: 
+Insert() : Validate Age (between 18-65) . Invalid data should not be entered.
+Display()
+Update(): asks for ID, and updates other informtaion.
+Inside Main():
+Enter 10 employees (use array of Employee class)
+Employee[] e=new Employee[10]; 
+for(int i=0;i<10;i++) { e[i] = new Employee();}
+For each employee call all methods.
+
+
+
+
+
+
+4. Exercise: study all properties: and make a class "CD-ROM" Write Once read every time. Set the value only once per object.
+Class: CDROM{
+String s;
+//Property should be set in a manner that it becomes a write-once property.
+Public String S{get{} set{}}
+}
+
+
+
+
+
+
+
+5. Stack : Data structure which adds members and removes members from top end only. Generic type
+Using only arrays / or classes prepare a project for representing a stack of string values.
+Please do not use Collection framework.
+While adding members to the list, crosscheck if they are null or not.
+
+
+
+
+
+
+6. The Charity Collection Box contains money in different currencies - dollars-cents or pounds-pence or rupees-paise. All of these currencies have notes and coins. The note and coin numbers are counted when they are added based on their value (that is number of 5 rupee notes, or $1 dollar note).
+A super class representing Currency is created with different denomination for notes and coins. Subclass Dollar, Pound and Rupee has conversion methods to rupees, print() and compute().
+Create class called CollectionBox that allows entry of these currencies in terms of number of notes and coins of different denomination. Create a display method that allows any of these currency types and displays the total amount collected in terms of Rupees. (Assume 1 dollar= Rs. 50 and 1 pound = 1.6232 U.S. dollars) 		
+
+
+
+
+
+
+
+
+
+7. 
+A comma separated list  containing pairs of topic name, time in hours ( Java 24 JEE 10 JME 12) will be entered in the command line arguments/ a string variable entered by the user. If a day consists of 8 hours, list out the topics that will be covered day-wise. Catch all the possible exceptions.
+Cmd line: Java 24 JEE 10 JME 12
+Case1: when we get odd number of args list:
+Cmd line: Java 24 JEE 10 JME
+The list is not complete : Exception should be raised
+Case 2: When we get string at even position instead of no of hours in int
+Cmd line: Java fourteen JEE 10 JME 12
+The list is incorrect: Exception should be raised
+Case 3: All is well:
+Output: (10/2=1.25: int greater than or equal to 1.25 is its ceiling  value, here 2)
+Java : 3 days training 
+JEE : 2 days training
+JME : 2 days training
+
+
+
+
+
+
+
+
+8. Using delegate convert method, design and code a C# program that converts money from any currency to any currency.  (USD, EURO, YEN, RUPEES)
+1 United States Dollar = 0.85 Euro = 104.55 Japanese Yen = 73.71 Indian Rupee
+
+Output is a menu driven program.
+1: Enter how much money you have
+2. All Conversion rates
+3. What to what (
+What is your money in : 1. USD \n 2. EURO..
+To What conversion you need:: 1. USD \n 2. EURO..
+4. Result (if person has not entered any amount or not chosen what to what: return 0; else return the amount in the currency desired
+5: exit
+
+
+
+
+
+
+9. Employee details name and designation is entered by the user in random order. It is desired to maintain a list  such that all the employees with the same designation must be kept together. Also, the list must have Program Managers first, then Project Manager, Team  Lead, Senior Programmer and Junior Programmer in that order. Display the list after all entry is done.
+
+Employee{ }
+List<Employee>: PM, PrjM, TL, ..
+Input(string s, list<Employee>)
+List.Add(new Employee(s))
+Input(“Eric”, TL)..
+TL.add(this) -> if Eric is a TL
+PM.add(this) -> if Eric is a PM
+
+
+
+
+
+10. Given two lists of employees. Merge the two lists into one without duplicates.
+Hint: Use Set
+
+
+
+
+	
+
