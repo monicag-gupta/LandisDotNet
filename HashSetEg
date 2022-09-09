@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+public class ListExample
+{
+    public static void Main(string[] args)
+    {
+        var names = new HashSet<string>();
+        names.Add("May");
+        names.Add("Tracy");
+        names.Add("Huong");
+        names.Add("May");  //will not be added as duplicate entry exists.
+        // Or Create a list of strings using collection initializer  
+        //var names = new HashSet<string>() {"May", "Baby", "Tracy",  "Tracy", "Huong" };  
+        // Iterate list element using foreach loop  
+        foreach (var name in names)
+            Console.WriteLine(name);
+        Console.ReadKey();
+    }
+}
