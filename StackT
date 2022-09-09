@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+public class StackExample {
+    public static void Main(string[] args)
+    {
+        Stack<string> names = new Stack<string>();  //push and pop 
+        names.Push("Eric");  //push adds elements
+        names.Push("Boo");
+        names.Push("Alain");
+        names.Push("Jeff");
+        foreach (string name in names)    {
+            Console.WriteLine(name);
+        }
+        //Peek returns the last element entered without deleting it
+        //Pop returns the last element entered after deleting it
+        Console.WriteLine("Peek Last element: " + names.Peek());  //Jeff
+        Console.WriteLine("Pop Last Element: " + names.Pop());     //Jeff
+        Console.WriteLine("After Pop, Peek Last element: " + names.Peek());   //Alain
+        Console.ReadLine();
+    }	}
