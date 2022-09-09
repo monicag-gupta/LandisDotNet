@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+
+
+
+namespace Day8Collection1
+{
+    internal class Program
+    {
+        
+        static void Main(string[] args)
+        {
+
+            Stack myStack = new Stack();
+            myStack.Push("1st Element");
+            myStack.Push("2nd Element");
+            myStack.Push("3rd Element");
+            myStack.Push("4th Element");
+            myStack.Push("5th Element");
+            myStack.Push("6th Element");
+            Console.Write("Total number of elements in the Stack are : ");
+            Console.WriteLine(myStack.Count);
+            Console.WriteLine("Element at the top is : " + myStack.Peek());
+            Console.Write("Total number of elements in the Stack are : ");
+            Console.WriteLine(myStack.Count);
+            Console.WriteLine("Element at the top that is removed from the Stack is : " + myStack.Pop());
+            Console.Write("Total number of elements in the Stack are : ");
+            Console.WriteLine(myStack.Count);
+            myStack.Clear();
+            Console.Write("Total number of elements in the Stack after clear are : ");
+            Console.WriteLine(myStack.Count);
+        }
+
+    }
+}
