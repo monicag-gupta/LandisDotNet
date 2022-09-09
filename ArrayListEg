@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+
+
+
+namespace Day8Collection1
+{
+    internal class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            ArrayList list = new ArrayList();
+            list.Add("Sheela"); list.Add("Soham"); list.Add("Susan"); list.Add("Amit");
+            list.Add("Babita"); list.Add("Akash"); list.Add("Vinod"); list.Add("Rajdeep");
+            list.Add("Sayan");
+            Console.WriteLine("Count:{0}", list.Count);
+            Console.WriteLine("Capacity:{0}", list.Capacity);
+            Console.Write("Values:");
+            foreach (Object obj in list)
+                Console.Write("{0}, ", obj);
+            list.Sort();
+            Console.Write("\n\nSorted Values:");
+            foreach (Object obj in list)
+                Console.Write("{0}, ", obj);
+            Console.WriteLine();
+            Console.ReadLine();
+
+        }
+
+    }
+}
