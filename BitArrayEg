@@ -28,7 +28,7 @@ namespace Day8Collection1
 
             // To get the value of index at index 2
             Console.WriteLine("myBitArr.Get(2): " + myBitArr.Get(2));
-            Console.WriteLine("myBitArr.Get(31): " + myBitArr2.Get(31));
+            
             // To get the value of index at index 3
             Console.WriteLine("myBitArr.Get(3) : " + myBitArr.Get(3));
             Console.WriteLine(" myBitArr.Count: " + myBitArr.Count);
