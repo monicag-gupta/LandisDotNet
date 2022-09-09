@@ -47,6 +47,9 @@ namespace Day8Collection1
             Console.WriteLine("\nResult of Not: ");
             myBitArr3 = new BitArray(myBitArr);
             PrintValues(myBitArr3.Not());
+            myBitArr3 = new BitArray(myBitArr);
+            myBitArr3.SetAll(false);
+            PrintValues(myBitArr3);
             //Object o = true;
             //Console.WriteLine(o.GetType());
             Console.ReadLine();
