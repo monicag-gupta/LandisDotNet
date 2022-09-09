@@ -1,0 +1,8 @@
+Post fix expression for ((2+3)*8+5+3)*6  is 6 5 2 3 + 8 * + 3 + .
+Assuming that Post fix expression is given, find the result of the expression using Stack.
+Hint: 
+Read the postfix expression from left to right character by character
+If the input is an operand then push it onto the stack.
+If the input is an operator then pop the two stack tops and perform the operation between the popped operands and push the result back into the stack.
+Repeat the steps until we reach the end of the input.
+Hint: Use ToCharArray() method of string 		
