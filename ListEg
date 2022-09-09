@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+public class NameList
+{
+    public static void Main()
+    {
+        List<string> list = 
+            new List<string>() { "Sheela", "Soham", "Susan", "Amit",
+            "Babita", "Akash", "Vinod", "Rajdeep", "Sayan"};
+        //list.Add(15);
+        Console.WriteLine("Count:{0}", list.Count);
+        Console.WriteLine("Capacity:{0}", list.Capacity);
+        Console.Write("Values:");
+        foreach (string obj in list)
+            Console.Write("{0}, ", obj);
+        list.Sort();
+        Console.Write("\n\nSorted Values:");
+        foreach (Object obj in list)
+            Console.Write("{0}, ", obj);
+        Console.WriteLine();
+        Console.ReadLine();
+    }
+}
+
