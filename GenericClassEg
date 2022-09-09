@@ -1,0 +1,35 @@
+using System;
+//using System.Collections.Generic;
+//using System.Collections;
+class Emp<T, U>
+{
+    public T empId;
+    public U empName;
+
+    public Emp()
+    {
+    }
+
+    public Emp(T empId, U empName)
+    {
+        this.empId = empId;
+        this.empName = empName;
+    }
+
+    public void print()
+    {
+        Console.WriteLine("Emp details: " + empId + " " + empName);
+    }
+}
+public class NameList
+{
+    public static void Main()
+    {
+        Emp<string,string> e1 = new Emp<string,string>("102", "Abc");
+        e1.print();
+        Emp<int,string> e2 = new Emp<int,string>(101, "Abc");
+        e2.print();
+        Console.ReadLine();
+    }
+}
+
