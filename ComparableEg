@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+
+class Emp : IComparable<Emp>
+{
+    public int id;
+    public string name;
+    public int sal;
+
+    public Emp()
+    {
+    }
+
+    public Emp(int id, string name, int sal)
+    {
+        this.id = id;
+        this.name = name;
+        this.sal = sal;
+    }
+
+    public override string ToString()
+    {
+        return "\nID: " + id + " Name: " +name+ " Sal : " + sal;
+    }
+
+    public int CompareTo(Emp e)
+    {
+        return this.id - e.id;
+    }
+
+}
+class SortEmpSal : IComparer<Emp>
+{
+    public int Compare(Emp e1,Emp e2)
+    {
+        return e1.sal -e2.sal;
+    }
+}
+public class SortedSetExample
+{
+    public static void Main(string[] args)
+    {
+        List<Emp> emps = new List<Emp>();
+        emps.Add(new Emp(101,"a",2090));
+        emps.Add(new Emp(110, "a", 30));
+        emps.Add(new Emp(102, "a", 250));
+        emps.Sort(new SortEmpSal());
+        foreach (Emp e in emps)
+            Console.WriteLine(e);
+        Console.ReadKey();
+    }
+}
