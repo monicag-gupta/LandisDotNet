@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+public class SortedSetExample
+{
+    public static void Main(string[] args)
+    {
+        // SortedSet create a list of similar data in sorted order, without duplicacy
+        var names = new SortedSet<string>() { "Eric", "Alain", "Jeff", "Boo", "Jeff" };
+
+        // Iterate SortedSet elements using foreach loop  
+        foreach (var name in names)
+        {
+            Console.WriteLine(name);   //Alain Boo Eric Jeff
+        }
+        Console.ReadKey();
+    }
+}
