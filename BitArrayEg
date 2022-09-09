@@ -13,13 +13,18 @@ namespace Day8Collection1
         {
             
             BitArray myBitArr = new BitArray(5);
-            BitArray myBitArr2 = new BitArray(new byte[] { 0, 0, 0, 1 });
+            BitArray myBitArr2 = new BitArray(5);
 
             myBitArr[0] = true;
             myBitArr[1] = true;
             myBitArr[2] = false;
             myBitArr[3] = true;
             myBitArr[4] = false;
+            myBitArr2[0] = false;
+            myBitArr2[2] = true;
+            myBitArr2[1] = true;
+            myBitArr2[3] = true;
+            myBitArr2[4] = false;
 
             // To get the value of index at index 2
             Console.WriteLine("myBitArr.Get(2): " + myBitArr.Get(2));
@@ -29,16 +34,24 @@ namespace Day8Collection1
             Console.WriteLine(" myBitArr.Count: " + myBitArr.Count);
             Console.WriteLine("myBitArr.IsReadOnly: " + myBitArr.IsReadOnly);
             Console.WriteLine("myBitArr.IsSynchronize: " + myBitArr.IsSynchronized);
-            myBitArr[4] = true;
+            Console.WriteLine("\nThe Bit Array: ");
             PrintValues(myBitArr);
-
+            Console.WriteLine("\nResult of And: ");
+            PrintValues(myBitArr.And(myBitArr2));
+            Console.WriteLine("\nResult of OR: ");
+            PrintValues(myBitArr.Or(myBitArr2));
+            //Object o = true;
+            //Console.WriteLine(o.GetType());
+            Console.ReadLine();
 
         }
         public static void PrintValues(IEnumerable myList)
         {
             foreach (Object obj in myList)
             {
+                //Console.WriteLine(sizeof(obj.GetType()));
                 Console.WriteLine(obj);
+
             }
         }
 
