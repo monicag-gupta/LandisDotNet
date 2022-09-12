@@ -3,6 +3,42 @@ using System.IO;
 using System.Text;
 namespace FileStreamWriteRead
 {
+    class SolutionIO
+    {
+        static void Main(string[] args)
+        {
+            if(args.Length != 2)
+                throw new Exception("Usage:filename \"Source path\" \"dest path\"");
+            
+            FileStream fRead = new FileStream(args[0], FileMode.Open, FileAccess.Read, FileShare.Read);
+            FileStream fWrite = new FileStream(args[1], FileMode.Create, FileAccess.Write, FileShare.None);
+
+            byte[] readArr = new byte[100];
+            int count;
+            while ((count = fRead.Read(readArr, 0, readArr.Length)) > 0)
+            {
+                fWrite.Write(readArr, 0, count);
+            }
+            fRead.Close();
+            fWrite.Close();
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+using System;
+using System.IO;
+using System.Text;
+namespace FileStreamWriteRead
+{
     class GFG
     {
         static void Main(string[] args)
