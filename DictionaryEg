@@ -1,6 +1,37 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+class Emp : IEqualityComparer
+{
+    int id;
+    public Emp() { }
+    public Emp(int id)
+    {
+        this.id = id;
+    }
+
+    public override bool Equals(object obj)
+    {
+        return base.Equals(obj);
+    }
+
+    public new bool Equals(object x, object y)
+    {
+        Emp ex = (Emp)x;
+        Emp ey = (Emp)y;
+        return ex.id == ey.id;
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public int GetHashCode(object obj)
+    {
+        throw new NotImplementedException();
+    }
+}
 class Program
 {
     static public void Main()
@@ -10,6 +41,9 @@ class Program
         My_dict1.Add(1126, "to");
         //My_dict1.Add(1126, "from"); //Argument Exception
         My_dict1.Add(1125, "C# programming");
+        My_dict1.Add(new Emp(101), "C# programming");
+        // My_dict1.Add(new Emp(101), "C# programming"); //Argument Exception
+
         foreach (DictionaryEntry ele1 in My_dict1)
             Console.WriteLine("{0} and {1}", ele1.Key, ele1.Value);
         Console.WriteLine("\nMy_dict1 contains key: 1123? " + My_dict1.ContainsKey(1123));
@@ -27,6 +61,7 @@ class Program
         Console.ReadKey();
     }
 }
+
 
 
 
