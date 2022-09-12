@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+
+class Student 
+    : 
+    IComparable<Student>, 
+    IComparer<Student>
+{
+    public int id;
+    public string name;
+    public int fees;
+    public int duration;
+    public int CompareTo(Student s)
+    {
+        return this.duration - s.duration;
+    }
+    public int Compare(Student s1, Student s2)
+    {
+        return s1.fees - s2.fees;
+    }
+    public Student() { }
+    public Student(int id, string name, int fees, int duration)
+    {
+        this.id = id;
+        this.name = name;
+        this.fees = fees;
+        this.duration = duration;
+    }
+
+    public override string ToString()
+    {
+        return "\nStudent Details: ID: " + id + " Name : " + name + " Fees : " + fees + " Duration : " + duration;
+    }
+}
+class SortNameStudent : IComparer<Student>
+{
+    public int Compare(Student s1, Student s2)
+    {
+        return s1.name.CompareTo(s2.name);
+    }
+}
+
+namespace Day9Collection2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Student> students = new List<Student>();
+            students.Add(new Student(101,"A",1200,2));
+            students.Add(new Student(102, "B", 1500, 3));
+            students.Add(new Student(103, "C", 1300, 2));
+            Console.WriteLine("Sorting according to Duration:");
+            students.Sort();
+            foreach (Student student in students)
+                Console.WriteLine(student);
+            Console.WriteLine("Sorting according to Fees:");
+            students.Sort(new Student());
+            foreach(Student student in students)
+            Console.WriteLine(student);
+            Console.WriteLine("Sorting according to Name:");
+            students.Sort(new SortNameStudent());
+            foreach (Student student in students)
+                Console.WriteLine(student);
+            Console.ReadLine();
+        }
+    }
+}
