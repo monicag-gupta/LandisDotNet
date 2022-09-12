@@ -8,9 +8,9 @@ class Program
         Hashtable My_dict1 = new Hashtable();
         My_dict1.Add(1123, "Welcome");
         My_dict1.Add(1126, "to");
-        My_dict1.Add(1126, "from");
+        //My_dict1.Add(1126, "from"); //Argument Exception
         My_dict1.Add(1125, "C# programming");
-        foreach (KeyValuePair<int, string> ele1 in My_dict1)
+        foreach (DictionaryEntry ele1 in My_dict1)
             Console.WriteLine("{0} and {1}", ele1.Key, ele1.Value);
         Console.WriteLine("\nMy_dict1 contains key: 1123? " + My_dict1.ContainsKey(1123));
         Console.WriteLine("\nMy_dict1 contains value: \"to\"? " + My_dict1.ContainsValue("to"));
@@ -19,7 +19,7 @@ class Program
         Console.WriteLine("\nMy_dict1 contains key: 1123? " + My_dict1.ContainsKey(1123));
         Console.WriteLine("\nMy_dict1 contains value: \"Welcome\"? " + My_dict1.ContainsValue("Welcome"));
 
-        foreach (KeyValuePair<int, string> ele in My_dict1)
+        foreach (DictionaryEntry ele in My_dict1)
             Console.WriteLine("{0} and {1}", ele.Key, ele.Value);
         Console.WriteLine("\nAfter Clear:\n");
         My_dict1.Clear();
@@ -27,6 +27,10 @@ class Program
         Console.ReadKey();
     }
 }
+
+
+
+
 
 
 
