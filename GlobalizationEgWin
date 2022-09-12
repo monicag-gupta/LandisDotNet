@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Day9WinI18n
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem.ToString() == "English")
+            {
+                ChangeLanguage("en");
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Punjabi")
+            {
+                ChangeLanguage("pa-IN");
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Hindi")
+            {
+                ChangeLanguage("hi-IN");
+            }
+            else
+            {
+                ChangeLanguage("mr-IN");
+            }
+        
+
+    }
+        private void ChangeLanguage(string lang)
+        {
+            foreach (Control c in this.Controls)
+            {
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+                resources.ApplyResources(c, c.Name, new CultureInfo(lang));
+            }
+        }
+
+    }
+}
