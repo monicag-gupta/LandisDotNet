@@ -1,0 +1,28 @@
+using System;
+using System.IO;
+using System.Text;
+namespace FileStreamWriteRead
+{
+    class GFG
+    {
+        static void Main(string[] args)
+        {
+            FileStream fWrite = new FileStream(@"C:\Monica\Textfile.txt", FileMode.Create, FileAccess.Write, FileShare.None);
+            var text = "This is some text written to the textfile " + "named Textfile using FileStream class.";
+            // Store the text in a byte array with  UTF8 encoding (8-bit Unicode  Transformation Format) 
+            byte[] writeArr = Encoding.UTF8.GetBytes(text);
+            fWrite.Write(writeArr, 0, text.Length);   //Write to file
+            fWrite.Close();
+            FileStream fRead = new FileStream(@"C:\Monica\Textfile.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
+            byte[] readArr = new byte[text.Length];
+            int count;
+            while ((count = fRead.Read(readArr, 0, readArr.Length)) > 0)
+            {
+                Console.WriteLine(Encoding.UTF8.GetString(readArr, 0, count));   //Read from file
+            }
+            fRead.Close();
+            Console.ReadKey();
+        }
+    }
+}
+
