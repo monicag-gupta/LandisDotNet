@@ -8,6 +8,8 @@ namespace FileStreamWriteRead
         static void Main(string[] args)
         {
             FileStream fWrite = new FileStream(@"C:\Monica\Textfile.txt", FileMode.Create, FileAccess.Write, FileShare.None);
+            //FileStream fWrite = new FileStream("C:\\Monica\\Textfile.txt", FileMode.Create, FileAccess.Write, FileShare.None);
+            //FileStream fWrite = new FileStream("/Monica/Textfile.txt", FileMode.Create, FileAccess.Write, FileShare.None);
             var text = "This is some text written to the textfile " + "named Textfile using FileStream class.";
             // Store the text in a byte array with  UTF8 encoding (8-bit Unicode  Transformation Format) 
             byte[] writeArr = Encoding.UTF8.GetBytes(text);
