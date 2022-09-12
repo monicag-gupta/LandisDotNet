@@ -1,0 +1,20 @@
+1. Create a dictionary that can hold words and multiple meanings. Provide search facility and display the words and their meanings (in sorted order, as in dictionary).
+
+What happens when you enter a duplicate word in the  Hashtable or SortedList?
+
+Make the dictionary that you created in the last exercise type safe.
+
+(45 mins)
+
+
+
+2. For the previous distance class example, Overload unary negation (-) (one operand) and binary subtraction operator (-) (two operands)
+ (15 min)
+ 
+ 
+ 
+ 
+
+
+
+
