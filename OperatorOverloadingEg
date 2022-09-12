@@ -40,12 +40,8 @@ namespace Day9OperatorOverloading
         }
         public static Distance operator ++(Distance d1)
         {
-            //Distance d = new Distance();
-            //d.km = 
-            d1.km++;
-            //d.m =
-            d1.m++;
-            return d1;
+            
+            return new Distance(d1.km + 1, d1.m + 1);
 
         }
     }
@@ -62,6 +58,7 @@ namespace Day9OperatorOverloading
             Console.WriteLine(d3 + " = " + d1 + " ++ ");
             d3 = ++d1;
             Console.WriteLine(d3 + " = ++" + d1);
+
             Console.ReadLine();
 
         }
