@@ -10,6 +10,8 @@ class Student
     public string name;
     public int fees;
     public int duration;
+
+
     public int CompareTo(Student s)
     {
         return this.duration - s.duration;
@@ -30,6 +32,17 @@ class Student
     public override string ToString()
     {
         return "\nStudent Details: ID: " + id + " Name : " + name + " Fees : " + fees + " Duration : " + duration;
+    }
+
+    public override bool Equals(object obj)
+    {
+        Student s = (Student)obj;
+        return this.id == s.id;
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
     }
 }
 class SortNameStudent : IComparer<Student>
@@ -57,11 +70,15 @@ namespace Day9Collection2
             Console.WriteLine("Sorting according to Fees:");
             students.Sort(new Student());
             foreach(Student student in students)
-            Console.WriteLine(student);
+                Console.WriteLine(student);
             Console.WriteLine("Sorting according to Name:");
             students.Sort(new SortNameStudent());
             foreach (Student student in students)
                 Console.WriteLine(student);
+
+            Student s1 = new Student(101, "A", 1200, 2);
+            Student s2 = new Student(101, "A", 1500, 3);
+            Console.WriteLine((s1.Equals(s2) ? "Both s1 and s2 are same std" : "NotSame"));
             Console.ReadLine();
         }
     }
