@@ -5,6 +5,42 @@ class Program
 {
     static public void Main()
     {
+        Hashtable My_dict1 = new Hashtable();
+        My_dict1.Add(1123, "Welcome");
+        My_dict1.Add(1126, "to");
+        My_dict1.Add(1126, "from");
+        My_dict1.Add(1125, "C# programming");
+        foreach (KeyValuePair<int, string> ele1 in My_dict1)
+            Console.WriteLine("{0} and {1}", ele1.Key, ele1.Value);
+        Console.WriteLine("\nMy_dict1 contains key: 1123? " + My_dict1.ContainsKey(1123));
+        Console.WriteLine("\nMy_dict1 contains value: \"to\"? " + My_dict1.ContainsValue("to"));
+        Console.WriteLine("\nAfter Remove():");
+        My_dict1.Remove(1123);
+        Console.WriteLine("\nMy_dict1 contains key: 1123? " + My_dict1.ContainsKey(1123));
+        Console.WriteLine("\nMy_dict1 contains value: \"Welcome\"? " + My_dict1.ContainsValue("Welcome"));
+
+        foreach (KeyValuePair<int, string> ele in My_dict1)
+            Console.WriteLine("{0} and {1}", ele.Key, ele.Value);
+        Console.WriteLine("\nAfter Clear:\n");
+        My_dict1.Clear();
+        Console.WriteLine("Total key/value pairs in My_dict:{0}", My_dict1.Count);
+        Console.ReadKey();
+    }
+}
+
+
+
+
+
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+class Program
+{
+    static public void Main()
+    {
         SortedList<int, string> My_dict1 = new SortedList<int, string>();
         My_dict1.Add(1123, "Welcome");
         My_dict1.Add(1126, "to");
