@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Day9OperatorOverloading
+{
+    class Distance
+    {
+        public int km { get; set; }
+        public int m { get; set; }
+
+        public override string ToString()
+        {
+            return "\nDistance : " + km + "KM and " + m + "metre.\n";
+        }
+        public Distance() { }
+        public Distance(int km, int m)
+        {
+            this.km = km;
+            this.m = m;
+        }
+
+        public static Distance operator +(Distance d1, Distance d2)
+        {
+            Distance rD = new Distance();
+            rD.km = d1.km + d2.km;
+            int m=d1.m + d2.m;
+            if (m >= 1000)
+            {
+                rD.km = rD.km + 1;
+                rD.m = m - 1000;
+            }
+            else
+            {
+                rD.m = m;
+            }
+            return rD;
+        }
+        public static Distance operator ++(Distance d1)
+        {
+            //Distance d = new Distance();
+            //d.km = 
+            d1.km++;
+            //d.m =
+            d1.m++;
+            return d1;
+
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Distance d1 = new Distance(20, 790);
+            Distance d2 = new Distance(10, 390);
+            Distance d3 = new Distance();
+            d3 = d1 + d2; //31 km 180 m
+            Console.WriteLine(d1 + " + " + d2 + " = " + d3);
+            d3 = d1++;
+            Console.WriteLine(d3 + " = " + d1 + " ++ ");
+            d3 = ++d1;
+            Console.WriteLine(d3 + " = ++" + d1);
+            Console.ReadLine();
+
+        }
+    }
+}
