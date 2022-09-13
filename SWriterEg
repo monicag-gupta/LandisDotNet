@@ -1,0 +1,23 @@
+using System;
+using System.IO;
+class WriteToFile
+{
+    public void Data()
+    {
+        StreamWriter sw = new StreamWriter("C://Monica//file1.txt");
+        Console.WriteLine("Enter the Text that you want to write on File");
+        string str = Console.ReadLine();
+        sw.WriteLine(str);
+        sw.WriteLine(str);
+        sw.Flush();
+        sw.Close();
+    }
+    static void Main(string[] args)
+    {
+        WriteToFile wr = new WriteToFile();
+        wr.Data();
+        Console.WriteLine("Press any Key to continue");
+        Console.ReadKey();
+    }
+}
+
