@@ -1,0 +1,53 @@
+using System;
+using System.Reflection;
+
+namespace Day10Reflection
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("int Reflected");
+            int a = 10;
+            Type type = a.GetType();
+            Console.WriteLine(type);
+
+
+            Console.WriteLine("String Reflected");
+            Type t = typeof(System.String);
+
+
+            Console.WriteLine("t.FullName:" + t.FullName);
+            Console.WriteLine(t.BaseType);
+            Console.WriteLine(t.IsClass);
+            Console.WriteLine(t.IsEnum);
+            Console.WriteLine(t.IsInterface);
+
+            Console.WriteLine("Constructors of {0} type...", t);
+            ConstructorInfo[] ci = t.GetConstructors(BindingFlags.Public | BindingFlags.Instance);
+            foreach (ConstructorInfo c in ci)
+            {
+                Console.WriteLine(c);
+            }
+
+
+            Console.WriteLine("Methods of {0} type...", t);
+            MethodInfo[] ci2 = t.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic);
+            foreach (MethodInfo m in ci2)
+            {
+                Console.WriteLine(m);
+            }
+
+            Console.WriteLine("Fields of {0} type...", t);
+            FieldInfo[] ci3 = t.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.NonPublic);
+            foreach (FieldInfo f in ci3)
+            {
+                Console.WriteLine(f);
+            }
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
