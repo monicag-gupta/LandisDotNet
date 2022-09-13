@@ -51,3 +51,164 @@ namespace Day10Reflection
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+/*Output:
+int Reflected
+System.Int32
+String Reflected
+t.FullName:System.String
+System.Object
+True
+False
+False
+Constructors of System.String type...
+Void .ctor(Char*)
+Void .ctor(Char*, Int32, Int32)
+Void .ctor(SByte*)
+Void .ctor(SByte*, Int32, Int32)
+Void .ctor(SByte*, Int32, Int32, System.Text.Encoding)
+Void .ctor(Char[], Int32, Int32)
+Void .ctor(Char[])
+Void .ctor(Char, Int32)
+Methods of System.String type...
+Char get_FirstChar()
+Boolean Equals(System.Object)
+Boolean Equals(System.String)
+Boolean Equals(System.String, System.StringComparison)
+Void CopyTo(Int32, Char[], Int32, Int32)
+Char[] ToCharArray()
+Char[] ToCharArray(Int32, Int32)
+Int32 GetHashCode()
+Int32 GetLegacyNonRandomizedHashCode()
+System.String[] Split(Char[])
+System.String[] Split(Char[], Int32)
+System.String[] Split(Char[], System.StringSplitOptions)
+System.String[] Split(Char[], Int32, System.StringSplitOptions)
+System.String[] SplitInternal(Char[], Int32, System.StringSplitOptions)
+System.String[] Split(System.String[], System.StringSplitOptions)
+System.String[] Split(System.String[], Int32, System.StringSplitOptions)
+System.String[] InternalSplitKeepEmptyEntries(Int32[], Int32[], Int32, Int32)
+System.String[] InternalSplitOmitEmptyEntries(Int32[], Int32[], Int32, Int32)
+Int32 MakeSeparatorList(Char[], Int32[] ByRef)
+Int32 MakeSeparatorList(System.String[], Int32[] ByRef, Int32[] ByRef)
+System.String Substring(Int32)
+System.String Substring(Int32, Int32)
+System.String InternalSubString(Int32, Int32)
+System.String Trim(Char[])
+System.String TrimStart(Char[])
+System.String TrimEnd(Char[])
+Int32 GetBytesFromEncoding(Byte*, Int32, System.Text.Encoding)
+Int32 ConvertToAnsi(Byte*, Int32, Boolean, Boolean)
+Boolean IsNormalized()
+Boolean IsNormalized(System.Text.NormalizationForm)
+System.String Normalize()
+System.String Normalize(System.Text.NormalizationForm)
+System.String CtorCharArray(Char[])
+System.String CtorCharArrayStartLength(Char[], Int32, Int32)
+System.String CtorCharCount(Char, Int32)
+System.String CtorCharPtr(Char*)
+System.String CtorCharPtrStartLength(Char*, Int32, Int32)
+Int32 CompareTo(System.Object)
+Int32 CompareTo(System.String)
+Boolean Contains(System.String)
+Boolean EndsWith(System.String)
+Boolean EndsWith(System.String, System.StringComparison)
+Boolean EndsWith(System.String, Boolean, System.Globalization.CultureInfo)
+Boolean EndsWith(Char)
+Int32 IndexOf(Char)
+Int32 IndexOf(Char, Int32)
+Int32 IndexOfAny(Char[])
+Int32 IndexOfAny(Char[], Int32)
+Int32 IndexOf(System.String)
+Int32 IndexOf(System.String, Int32)
+Int32 IndexOf(System.String, Int32, Int32)
+Int32 IndexOf(System.String, System.StringComparison)
+Int32 IndexOf(System.String, Int32, System.StringComparison)
+Int32 IndexOf(System.String, Int32, Int32, System.StringComparison)
+Int32 LastIndexOf(Char)
+Int32 LastIndexOf(Char, Int32)
+Int32 LastIndexOfAny(Char[])
+Int32 LastIndexOfAny(Char[], Int32)
+Int32 LastIndexOf(System.String)
+Int32 LastIndexOf(System.String, Int32)
+Int32 LastIndexOf(System.String, Int32, Int32)
+Int32 LastIndexOf(System.String, System.StringComparison)
+Int32 LastIndexOf(System.String, Int32, System.StringComparison)
+Int32 LastIndexOf(System.String, Int32, Int32, System.StringComparison)
+System.String PadLeft(Int32)
+System.String PadLeft(Int32, Char)
+System.String PadRight(Int32)
+System.String PadRight(Int32, Char)
+Boolean StartsWith(System.String)
+Boolean StartsWith(System.String, System.StringComparison)
+Boolean StartsWith(System.String, Boolean, System.Globalization.CultureInfo)
+System.String ToLower()
+System.String ToLower(System.Globalization.CultureInfo)
+System.String ToLowerInvariant()
+System.String ToUpper()
+System.String ToUpper(System.Globalization.CultureInfo)
+System.String ToUpperInvariant()
+System.String ToString()
+System.String ToString(System.IFormatProvider)
+System.Object Clone()
+System.String Trim()
+System.String TrimHelper(Int32)
+System.String TrimHelper(Char[], Int32)
+System.String CreateTrimmedString(Int32, Int32)
+System.String Insert(Int32, System.String)
+System.String Replace(Char, Char)
+System.String Replace(System.String, System.String)
+System.String Remove(Int32, Int32)
+System.String Remove(Int32)
+System.TypeCode GetTypeCode()
+Boolean System.IConvertible.ToBoolean(System.IFormatProvider)
+Char System.IConvertible.ToChar(System.IFormatProvider)
+SByte System.IConvertible.ToSByte(System.IFormatProvider)
+Byte System.IConvertible.ToByte(System.IFormatProvider)
+Int16 System.IConvertible.ToInt16(System.IFormatProvider)
+UInt16 System.IConvertible.ToUInt16(System.IFormatProvider)
+Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+UInt32 System.IConvertible.ToUInt32(System.IFormatProvider)
+Int64 System.IConvertible.ToInt64(System.IFormatProvider)
+UInt64 System.IConvertible.ToUInt64(System.IFormatProvider)
+Single System.IConvertible.ToSingle(System.IFormatProvider)
+Double System.IConvertible.ToDouble(System.IFormatProvider)
+System.Decimal System.IConvertible.ToDecimal(System.IFormatProvider)
+System.DateTime System.IConvertible.ToDateTime(System.IFormatProvider)
+System.Object System.IConvertible.ToType(System.Type, System.IFormatProvider)
+System.CharEnumerator GetEnumerator()
+System.Collections.Generic.IEnumerator`1[System.Char] System.Collections.Generic.IEnumerable<System.Char>.GetEnumerator()
+System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+Char get_Chars(Int32)
+Int32 get_Length()
+Boolean IsFastSort()
+Void SetTrailByte(Byte)
+Int32 IndexOf(Char, Int32, Int32)
+Int32 IndexOfAny(Char[], Int32, Int32)
+Int32 LastIndexOf(Char, Int32, Int32)
+Int32 LastIndexOfAny(Char[], Int32, Int32)
+System.String PadHelper(Int32, Char, Boolean)
+System.String ReplaceInternal(Char, Char)
+System.String ReplaceInternal(System.String, System.String)
+Boolean IsAscii()
+Boolean TryGetTrailByte(Byte ByRef)
+Void Finalize()
+System.Type GetType()
+System.Object MemberwiseClone()
+Fields of System.String type...
+System.String Empty
+Int32 TrimHead
+Int32 TrimTail
+Int32 TrimBoth
+Int32 charPtrAlignConst
+Int32 alignConst
+*/
