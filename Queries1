@@ -1,0 +1,114 @@
+CREATE TABLE emp1
+( emp_id INT PRIMARY KEY,  
+  last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY  
+); 
+
+
+CREATE TABLE emp2  
+( emp_id INT,  
+  last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY,  
+  CONSTRAINT emp2_pk PRIMARY KEY (emp_id)  
+); 
+
+
+CREATE TABLE emp3  
+( last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY,  
+  CONSTRAINT emp3_pk PRIMARY KEY (last_name, first_name)  
+); 
+
+
+CREATE TABLE emp4 
+( emp_id INT NOT NULL,  
+  last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY
+); 
+
+
+ALTER TABLE emp4
+ADD CONSTRAINT emp4_pk PRIMARY KEY (emp_id); 
+
+
+
+ALTER TABLE emp2  
+DROP CONSTRAINT emp2_pk ; 
+
+
+
+
+CREATE TABLE Project (
+  ProjectCode int CONSTRAINT pkProjectCode PRIMARY KEY,
+  Description varchar(50) CONSTRAINT unDesc UNIQUE
+);
+
+
+
+ALTER TABLE EmployeeLeave
+ADD CONSTRAINT rfkcEmployeeID FOREIGN KEY(EmployeeID) 
+REFERENCES Emp(EmployeeID)
+ON DELETE NO ACTION ON UPDATE NO ACTION
+
+
+
+
+CREATE TABLE products  
+( product_id INT PRIMARY KEY,  
+  product_name VARCHAR(50) NOT NULL,  
+  category VARCHAR(25)  
+); 
+ 
+CREATE TABLE inventory  
+( inventory_id INT PRIMARY KEY,  
+  product_id INT NOT NULL,  
+  quantity INT,  
+  min_level INT,  
+  max_level INT,  
+  CONSTRAINT fk_inv_product_id  
+    FOREIGN KEY (product_id)  
+    REFERENCES products (product_id)  
+); 
+
+
+
+
+CREATE TABLE products2  
+( product_name VARCHAR(50) NOT NULL,  
+  location VARCHAR(50) NOT NULL,  
+  category VARCHAR(25)  
+  CONSTRAINT products_pk PRIMARY KEY (product_name, location)  
+);  
+
+CREATE TABLE inventory2  
+( inventory_id INT PRIMARY KEY,  
+  product_name VARCHAR(50) NOT NULL,  
+  location VARCHAR(50) NOT NULL,  
+  quantity INT,  
+  min_level INT,  
+  max_level INT,  
+  CONSTRAINT fk_inv_product  
+    FOREIGN KEY (product_name, location)  
+    REFERENCES products2 (product_name, location)  
+); 
+
+
+
+
+
+ALTER TABLE inventory
+DROP CONSTRAINT fk_inv_product_id;   
+
+
+
+
+
+
+
+
+
+
