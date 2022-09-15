@@ -4,7 +4,7 @@ drop database training;
 
 create database training;
 
-use database training;
+use training;
 
 CREATE TABLE EmployeeLeave
 (
