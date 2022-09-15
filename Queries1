@@ -1,4 +1,20 @@
-drop table emp;
+use master;
+drop database training;
+
+
+create database training;
+
+use database training;
+
+CREATE TABLE EmployeeLeave
+(
+EmployeeID int NOT NULL, 
+LeaveStartDate datetime NOT NULL,
+LeaveEndDate datetime NOT NULL,
+LeaveReason varchar(100),
+LeaveType char(2)NOT NULL
+)
+
 
 CREATE TABLE emp
 ( EmployeeID INT PRIMARY KEY,  
