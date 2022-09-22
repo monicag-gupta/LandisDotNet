@@ -51,7 +51,7 @@ sal money CHECK (sal BETWEEN 20000 AND 80000)
 
 CREATE TABLE EmployeeLeave3
 		(
-		LeaveType char(2) CONSTRAINT chkLeave 	CHECK(LeaveType IN('CL','SL','PL')) 	CONSTRAINT chkDefLeave DEFAULT 'PL'
+		LeaveType char(2) CONSTRAINT chkLeave2 	CHECK(LeaveType IN('CL','SL','PL')) 	CONSTRAINT chkDefLeave DEFAULT 'PL'
 		)
 
 
