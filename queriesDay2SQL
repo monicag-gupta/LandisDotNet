@@ -2,3 +2,37 @@ CREATE TABLE Project (
   ProjectCode int CONSTRAINT pkProjectCode PRIMARY KEY,
   Description varchar(50) CONSTRAINT unDesc UNIQUE
 )
+
+
+
+Foreign Key
+Syntax:
+ CREATE TABLE child_table  
+(  
+  column1 datatype [ NULL | NOT NULL ],  
+  column2 datatype [ NULL | NOT NULL ],  
+  ...  
+  CONSTRAINT fk_name  
+    FOREIGN KEY (child_col1, child_col2, ... child_col_n)  
+    REFERENCES parent_table (parent_col1, parent_col2, ... parent_col_n)  
+    [ON DELETE {NO ACTION | CASCADE | SET NULL | SET DEFAULT} ]  
+    [ON UPDATE {NO ACTION | CASCADE | SET NULL | SET DEFAULT} ]   
+); 
+
+
+
+CREATE TABLE EmployeeLeave2
+(
+EmployeeID int,
+LeaveStartDate datetime CONSTRAINT cpkLeaveStartDate PRIMARY KEY(EmployeeID, LeaveStartDate),
+LeaveEndDate datetime NOT NULL,
+LeaveReason varchar(100),
+LeaveType char(2) CONSTRAINT chkLeave CHECK(LeaveType IN('CL','SL','PL'))
+)
+
+
+
+
+
+
+
