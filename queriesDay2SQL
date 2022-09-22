@@ -138,6 +138,16 @@ SELECT * FROM CUSTOMERS;
 
 
 
+Following command is an example, which would update ADDRESS for a customer whose ID is 6 −
+
+UPDATE CUSTOMERS 
+SET ADDRESS = 'Pune' 
+WHERE ID = 6; 
+
+If you want to modify all ADDRESS and SALARY column values in CUSTOMERS table, you do not need to use WHERE clause. UPDATE query would be as follows −
+
+UPDATE CUSTOMERS 
+SET ADDRESS = 'Pune', SALARY = 1000.00;
 
 
 
