@@ -146,8 +146,15 @@ WHERE ID = 6;
 
 If you want to modify all ADDRESS and SALARY column values in CUSTOMERS table, you do not need to use WHERE clause. UPDATE query would be as follows −
 
-UPDATE CUSTOMERS 
+UPDATE CUSTOMERS_Bkp 
 SET ADDRESS = 'Pune', SALARY = 1000.00;
+
+
+DELETE FROM CUSTOMERS_BKP WHERE ID >7;
+
+
+DELETE FROM CUSTOMERS_BKP;
+
 
 
 
