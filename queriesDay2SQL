@@ -1,0 +1,4 @@
+CREATE TABLE Project (
+  ProjectCode int CONSTRAINT pkProjectCode PRIMARY KEY,
+  Description varchar(50) CONSTRAINT unDesc UNIQUE
+)
