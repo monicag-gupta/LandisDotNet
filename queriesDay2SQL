@@ -31,6 +31,17 @@ LeaveType char(2) CONSTRAINT chkLeave CHECK(LeaveType IN('CL','SL','PL'))
 )
 
 
+CREATE TABLE Emp5
+	(
+	DeptCode char(4) CHECK (DeptCode LIKE '[0-9][0-9][0-9][0-9]')
+	)
+
+
+
+
+
+
+
 
 
 
