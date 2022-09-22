@@ -38,6 +38,11 @@ CREATE TABLE Emp5
 
 
 
+CREATE TABLE emp6
+(
+sal money CHECK (sal BETWEEN 20000 AND 80000)
+)
+
 
 
 
