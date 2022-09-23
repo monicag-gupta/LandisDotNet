@@ -1,0 +1,6 @@
+SELECT city, state, COUNT (customer_id) as customer_count
+FROM sales.customers 
+--where COUNT (customer_id)>5 --where customer_count>5
+--state='NY'
+GROUP BY  state,  city having COUNT (customer_id)>12
+ORDER BY state,CITY;
