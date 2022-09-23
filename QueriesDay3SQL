@@ -87,6 +87,22 @@ select CUSTOMER_ID from orders group by CUSTOMER_ID;
 
 
 
+create table tbl1(A char(3),B char(3));
+create table tbl2(B char(3),C char(3));
+
+insert into tbl1 values('A1','B1'),('A2','B2'),('A3','B3');
+insert into tbl2 values('B1','C1'),('B3','C3'),('B5','C5');
+
+select * from tbl1;
+select * from tbl2;
+
+
+
+
+
+
+
+
 
 
 
