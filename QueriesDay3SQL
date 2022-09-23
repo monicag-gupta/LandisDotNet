@@ -311,3 +311,29 @@ VALUES
 
 
 
+
+
+
+Begin
+DECLARE @model_year SMALLINT;
+SET @model_year = 2018;
+SELECT
+    product_name,
+    model_year,
+    list_price 
+FROM 
+     productsNew
+WHERE 
+    model_year = @model_year
+ORDER BY
+    product_name;
+End
+
+
+
+
+
+
+
+
+
