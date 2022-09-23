@@ -208,6 +208,17 @@ SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
 
 
 
+A sub-query or Inner query or Nested query is a query within another SQL Server query and embedded within the WHERE clause. A sub query is used to return data that will be used in the main query as a condition to further restrict the data to be retrieved.
+
+Sub queries can be used with the SELECT, INSERT, UPDATE, and DELETE statements along with the operators like =, <, >, >=, <=, IN, BETWEEN, etc.
+
+There are a few rules that sub queries must follow −
+You must enclose a subquery in parenthesis.
+A subquery must include a SELECT clause and a FROM clause.
+A subquery can include optional WHERE, GROUP BY, and HAVING clauses.
+A subquery cannot include COMPUTE or FOR BROWSE clauses.
+You can include an ORDER BY clause only when a TOP clause is included.
+You can nest sub queries up to 32 levels.
 
 
 
