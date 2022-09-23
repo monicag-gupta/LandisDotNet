@@ -363,3 +363,25 @@ End
 
 
 
+
+Begin
+DECLARE 
+    @product_name VARCHAR(MAX),
+    @list_price DECIMAL(10,2);
+
+SELECT 
+    @product_name = product_name,
+    @list_price = list_price
+FROM
+    products
+WHERE
+    product_id = 1;
+
+SELECT 
+    @product_name AS product_name, 
+    @list_price AS list_price;
+End
+
+
+
+
