@@ -344,3 +344,22 @@ End
 
 
 
+
+
+Begin
+ 	SET NOCOUNT ON; 
+	DECLARE @product_count INT;
+	SET @product_count = (
+           SELECT COUNT(*) FROM productsNew);
+	PRINT 'The number of products is ' + CAST(@product_count AS VARCHAR(MAX));
+End
+
+
+
+
+
+
+
+
+
+
