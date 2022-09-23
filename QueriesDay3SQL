@@ -333,6 +333,13 @@ End
 
 
 
+Begin
+ 	SET NOCOUNT ON; 
+	DECLARE @product_count INT;
+	SET @product_count = (
+           SELECT COUNT(*) FROM productsNew);
+	Print @product_count;
+End
 
 
 
