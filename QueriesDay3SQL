@@ -184,7 +184,16 @@ SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
  
  
 
-
+ SELECT  a.ID, a.name,  a.SALARY, b.NAME, b.SALARY
+   FROM CUSTOMERS a, CUSTOMERS b
+   WHERE a.SALARY < b.SALARY order by a.ID;
+   
+   
+   
+   
+   
+   
+  
 
 
 
