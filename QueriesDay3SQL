@@ -193,7 +193,21 @@ SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
    
    
    
-  
+ 
+ 
+ 
+  --what is the sal of manager's manager of 102
+--hint: select mid for 102, join eid of alias1 and get mid, 
+--join eid of alias2 get sal
+
+
+
+
+
+
+
+
+
 
 
 
