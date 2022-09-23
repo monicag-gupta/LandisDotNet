@@ -20,3 +20,16 @@ HAVING
     COUNT (order_id) >= 2
 ORDER BY
     customer_id;
+
+
+
+SELECT
+    category_id,
+    MAX (list_price) max_list_price,
+    MIN (list_price) min_list_price
+FROM
+    production.products
+GROUP BY
+    category_id
+HAVING
+    MAX (list_price) > 4000 OR MIN (list_price) < 500;
