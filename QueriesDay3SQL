@@ -33,3 +33,15 @@ GROUP BY
     category_id
 HAVING
     MAX (list_price) > 4000 OR MIN (list_price) < 500;
+    
+    
+    
+    
+  CREATE TABLE ORDERS (
+   ID          INT        NOT NULL,
+   DATE        DATETIME, 
+   CUSTOMER_ID INT references CUSTOMERS(ID),
+   AMOUNT    DECIMAL (18, 2),  
+   PRIMARY KEY (ID)
+);
+
