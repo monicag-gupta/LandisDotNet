@@ -79,6 +79,15 @@ INSERT INTO CUSTOMERS VALUES (11, 'Mahesh', 28, 'Delhi', 1700.00 );
 
 
 
+select distinct CUSTOMER_ID from orders;
+select CUSTOMER_ID from orders group by CUSTOMER_ID;
+
+
+
+
+
+
+
 
 
 
