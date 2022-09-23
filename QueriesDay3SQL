@@ -222,3 +222,49 @@ You can nest sub queries up to 32 levels.
 
 
 
+
+
+
+Subqueries with SELECT Statement
+Syntax
+Subqueries are most frequently used with the SELECT statement. Following is the basic syntax.
+SELECT column_name [, column_name ] 
+FROM   table1 [, table2 ] 
+WHERE  column_name OPERATOR 
+   (SELECT column_name [, column_name ] 
+   FROM table1 [, table2 ] 
+   [WHERE]) 
+
+
+Subqueries with INSERT Statement
+Sub queries also can be used with INSERT statements. The INSERT statement uses the data returned from the subquery to insert into another table. The selected data in the subquery can be modified with any of the character, date, or number functions.
+Syntax
+INSERT INTO table_name [ (column1 [, column2 ]) ] 
+   SELECT [ *|column1 [, column2 ] 
+   FROM table1 [, table2 ] 
+   [ WHERE VALUE OPERATOR ]
+
+
+
+
+
+Subqueries with UPDATE Statement
+The subquery can be used in conjunction with the UPDATE statement. Either single or multiple columns in a table can be updated when using a subquery with the UPDATE statement.
+Syntax
+UPDATE table 
+SET column_name = new_value 
+[ WHERE OPERATOR [ VALUE ] 
+   (SELECT COLUMN_NAME 
+   FROM TABLE_NAME) 
+   [ WHERE) ] 
+
+
+
+Subqueries with DELETE Statement
+The subquery can be used in conjunction with the DELETE statement like with any other statements mentioned above.
+Syntax
+DELETE FROM TABLE_NAME [ WHERE OPERATOR [ VALUE ] (SELECT COLUMN_NAME FROM TABLE_NAME) [ WHERE) ] 
+
+
+
+
