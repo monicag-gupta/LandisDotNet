@@ -171,6 +171,19 @@ SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
 
 
 
+ create table emp7(eid int, mid int, sal int);
+ insert into emp7 values(101,201,10000),(201,301,20000),(102,202,11000),
+ (202,301, 21000),(301,null,30000);
+ --what is the sal of manager of 102
+ select t2.sal from emp7 t1 join emp7 t2 on t1.mid=t2.eid where t1.eid=102;
+ select t2.sal from emp7 t2 where t2.eid=
+ (select t1.mid from emp7 t1 where t1.eid=102);
+ 
+ 
+ 
+ 
+ 
+
 
 
 
