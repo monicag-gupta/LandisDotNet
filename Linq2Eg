@@ -1,0 +1,17 @@
+using System;
+using System.Linq;
+class Program	{
+    static void Main(string[] args)    {
+        string poem = @"What is this life if, full of care,
+ We have no time to stand and stare.
+ No time to stand beneath the boughs
+ And stare as long as sheep or cows.
+ No time to see, when woods we pass,
+Where squirrels hide their nuts in grass.";
+        var matchQuery = from c in poem where c == ',' select c;
+        int i = 0;
+        foreach (char c in matchQuery)        {
+            i++;	        }
+        Console.WriteLine(i);   //4
+        Console.ReadLine();
+    }	 }
