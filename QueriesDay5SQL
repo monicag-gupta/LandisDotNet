@@ -130,6 +130,21 @@ END
 
 
 
+INSERT INTO products(
+    product_name, brand_id, category_id, model_year,  list_price
+)
+VALUES (
+    'Test product', 1, 1, 2018, 599
+);
+
+
+
+SELECT      *  FROM   product_audits;
+
+
+
+
+
 
 
 
