@@ -39,3 +39,18 @@ VALUES
  	('Test product2', 2, 2, 2016, 699),
  	('Test product3', 3, 3, 2018, 799),
  	('Test product4', 4, 4, 2015, 899);
+
+
+select * from products;
+
+
+
+
+
+
+
+
+
+
+
+
