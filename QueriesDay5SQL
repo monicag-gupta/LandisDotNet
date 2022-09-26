@@ -199,6 +199,18 @@ END
 
 
 
+Select * from products
+insert into products values('Test product6', 5, 5, 2019, 799)
+Select * from products
+--Duplicate Entry:
+insert into products values('Test product6', 5, 5, 2019, 799)
+Select * from products
+Select * from products_duplicate
+
+
+
+
+
 
 
 
