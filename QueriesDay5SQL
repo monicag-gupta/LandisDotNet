@@ -144,6 +144,19 @@ SELECT      *  FROM   product_audits;
 
 
 
+DELETE FROM 
+     products
+WHERE 
+    product_id = 5;
+
+
+SELECT      *  FROM   product_audits;
+
+
+
+
+
+
 
 
 
