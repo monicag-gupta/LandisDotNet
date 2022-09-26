@@ -157,6 +157,7 @@ SELECT      *  FROM   product_audits;
 
 
 
+Drop trigger trg_product_audit
 
 
 
