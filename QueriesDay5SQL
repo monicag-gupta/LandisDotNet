@@ -18,3 +18,24 @@ EXECUTE SelectCustomerstabledata
 
 SELECT @count AS 'Number of Customers found';
 End
+
+
+
+
+
+
+drop table if exists products;
+CREATE TABLE products (
+	product_id INT IDENTITY (1, 1) PRIMARY KEY,
+	product_name VARCHAR (255) NOT NULL,
+	brand_id INT NOT NULL,
+	category_id INT NOT NULL,
+	model_year SMALLINT NOT NULL,
+	list_price DECIMAL (10, 2) NOT NULL);
+
+INSERT INTO products
+VALUES 
+ 	('Test product1', 1, 1, 2018, 599),
+ 	('Test product2', 2, 2, 2016, 699),
+ 	('Test product3', 3, 3, 2018, 799),
+ 	('Test product4', 4, 4, 2015, 899);
