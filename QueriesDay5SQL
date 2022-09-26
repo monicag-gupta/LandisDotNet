@@ -216,6 +216,7 @@ Select * from products_duplicate
 
 
 
+exec sp_helptext '[dbo].[trg_products]'
 
 
 
