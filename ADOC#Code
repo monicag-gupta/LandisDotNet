@@ -49,10 +49,10 @@ namespace ConsoleApp1
 
 
                 //////Update:
-                SqlCommand cmd = new SqlCommand("Update t set j=5 where i=2 and j=4", con);
-                cmd.CommandType = CommandType.Text;
-                cmd.ExecuteNonQuery();
-                Console.WriteLine("Data updated");
+                //SqlCommand cmd = new SqlCommand("Update t set j=5 where i=2 and j=4", con);
+                //cmd.CommandType = CommandType.Text;
+                //cmd.ExecuteNonQuery();
+                //Console.WriteLine("Data updated");
             }
             catch (Exception e) { Console.WriteLine(e.ToString()); }
 
@@ -60,4 +60,6 @@ namespace ConsoleApp1
         }
     }
 }
+
+
 
