@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <script src="mysiteJS.js"></script>
+        <script>
+            function fn(){
+                var n=prompt("Enter your name:");
+                var t=confirm("Are you sure you are "+n);
+                if(t){
+                    alert("Welcome "+ n+"!!");
+                }
+                else{
+                    alert("Intruder alert box!!");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Enter x:<input type="text" id="x"><br><br>
+        Enter y:<input type="text" id="y"><br><br>
+        <div id="res"></div>
+        <br><br>
+        <button onclick="add();">Add</button>
+        <hr>
+        <br>
+        <button onclick="fn();">FnClick</button>
+        <hr>
+        <br>
+        <a href="First.html" onclick="return confirm('Are you sure you want to leave the site??');">First</a>
+    </body>
+</html>
+
+
+
+
+function add(){
+    var x=parseInt(document.getElementById("x").value);
+    var y=parseInt(document.getElementById("y").value);
+    var res=x+y;
+    document.getElementById("res").innerHTML="Result of Addition of " +x+" and " + y + " is "+ res;
+
+}
