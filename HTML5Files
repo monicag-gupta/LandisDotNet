@@ -31,3 +31,24 @@
 </body>
 </html>
 
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>	progress Eg</title>
+	</head>
+	<body>
+		<progress value="22" max="100"></progress>22 of 100<br>
+		<meter value="2" min="0" max="10"></meter>2 out of 10<br>
+		<meter value="0.6"></meter> 60%
+
+	</body>
+</html>
+
+
+
+
+
+
