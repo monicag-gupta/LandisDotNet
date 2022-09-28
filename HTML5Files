@@ -91,3 +91,75 @@
 
 
 
+
+
+<!DOCTYPE html>
+<html> 
+    <head>
+        <link href="mysite.css" rel="stylesheet">
+        <style>
+            /*Internal style*/
+            h1{
+                color:blue;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            #para1{
+                color:green;
+                font-size: 20px;
+            }
+            .div1{
+                color:red;
+            }
+            div p{
+                /*all p inside div;child, grandchild etc*/
+                font-size:36px;
+            }
+            div *{
+                /*all tags inside div;child, grandchild etc*/
+                text-align:center;
+            }
+            h1,#para1{
+                font-weight: bolder;
+            }
+            div~p{
+                color:aqua;
+            }
+            div+p{
+                color:orange;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Internal style H1</h1>
+        <h2>External style h2</h2>
+        <h3 style="color:lightblue">Inline style h3</h3>
+        <p id="para1">Green para with id as para1</p>
+        <div class="div1">Div with class div1</div>
+        <h4>
+            <div class="div1">div inside h4 with class div1</div>
+        </h4>
+        <div>
+            <p>This para is child of div</p>
+            <h5>
+                <div>This is div in div</div>
+                <h5>this is h5 in div</h5>
+                <p>This para is grand child of div, child of h5</p>
+                <h6 id="para1">H6 in h5 in div</h6>
+            </h5>
+        </div>
+        <p>This is direct sibling of div</p>
+        <h2> This is h2 after div and p  </h2>
+        <p>This is non-direct sibling of div</p>
+</body>
+</html>
+
+
+
+
+/*external css*/
+h2{
+    color:blueviolet;
+}
+
+
