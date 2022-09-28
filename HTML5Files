@@ -52,3 +52,42 @@
 
 
 
+
+
+<!DOCTYPE html>
+<html> <body>
+   <form>
+    Enter Email:<input type="email"><br><br>
+    <label for="n">Enter Name:</label><input type="text" id="n" placeholder="Name here" required><br><br>
+    Enter ZipCode:<input type="text" pattern="[0-9]{6}" required><br><br>
+    Enter Sal:<input type="text" value="50000" readonly><br><br>
+    Enter password:<input type="password"><br><br>
+    Enter Web address:<input type="url" autofocus><br><br>
+    Enter Age:<input type="number" min="0" max="150"><br><br>
+    Enter DOB:<input type="date"><br><br>
+    Enter Gender:<input type="radio"  name="gender">Male <input type="radio"  name="gender">Female<br><br>
+    Enter Skills:<input type="checkbox" >C++ &nbsp;&nbsp;<input type="checkbox" >C#&nbsp;&nbsp;<input type="checkbox" >Java&nbsp;&nbsp;<br><br>
+    Enter Branch: 
+    <select>
+        <option>Noida</option>
+        <option>Gurgaon</option>
+        <option>Kolkata</option>
+    </select>
+    <br><br>
+    Enter Project:
+    <input list="list1">
+    <datalist id="list1">
+        <option>ABC</option>
+        <option>MSDN</option>
+        <option>TCS</option>
+    </datalist>
+    <br><br>
+    Enter Resume:<input type="file" multiple><br><br>
+    Enter Progress:<input type="range"><br><br>
+    <input type="submit">
+   </form>
+</body>
+</html>
+
+
+
