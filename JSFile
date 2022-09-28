@@ -175,3 +175,27 @@ function add(){
 </html>
 
 
+
+
+
+
+
+
+<!DOCTYPE html>
+<html><body>
+<h1>JavaScript Functions</h1>
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+<p id="demo">     </p>
+The Function is:
+<p id="demo2">valuep</p>
+
+<script>
+function myFunction(p1, p2) {
+    return p1 * p2;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+document.getElementById("demo2").innerHTML = myFunction;
+
+</script></body></html>
+
+
