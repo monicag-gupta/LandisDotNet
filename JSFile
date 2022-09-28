@@ -199,3 +199,32 @@ document.getElementById("demo2").innerHTML = myFunction;
 </script></body></html>
 
 
+
+
+
+
+
+<!DOCTYPE html>
+<html><body>
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+Enter Text for new Para: <input type="text" id="para1">
+<br>
+
+<button onclick="addPara();">AddPara</button>
+</div>
+<script>
+    function addPara(){ 
+        var para = document.createElement("p");//<p></p>
+        //var node = document.createTextNode("This is new.");
+        var txt=document.getElementById("para1").value;
+        var node = document.createTextNode("The new project assigned is: " + txt);
+        para.appendChild(node);//<p>This is new.</p>
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+        //var child = document.getElementById("p1");
+        //element.insertBefore(para,child);
+    }
+</script></body> </html>
+
