@@ -1,0 +1,101 @@
+using Day20Prj2MVC.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace Day20Prj2MVC.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            
+
+            return View();
+        }
+        public IActionResult WelcomeEmp(string name)
+        {
+            TempData["Name"] = name;
+            
+            return View();
+        }
+        public IActionResult WelcomeBack(string name)
+        {
+            TempData["Name"] = name;
+
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+<h1>
+    <a href="Home/WelcomeEmp">Welcome Emp Page</a>
+    <form action="Home/WelcomeEmp">
+       Name:  <input type="text" name="name" />
+       <input type="submit" />
+        </form>
+    <Br /><Br />
+
+</h1>
+
+
+
+
+
+
+<h1>
+    Welcome @TempData["Name"] !!
+</h1>
+<h2>
+<a href="/home/WelcomeBack">WelcomeBack</a>
+
+<hr />
+<form action="/home/WelcomeBack">
+        <input type="hidden" value=@TempData["Name"] name="name" />
+        <input type="submit" />
+
+</form>
+</h2>
+
+
+
+
+
+<h1>
+    Welcome @TempData["Name"] !!
+</h1>
+
+
