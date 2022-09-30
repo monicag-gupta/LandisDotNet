@@ -54,3 +54,32 @@ namespace Day20Prj2MVC.Controllers
 
 
 
+
+
+
+
+Index.cshtml
+
+<h1>
+<a href="Employee/WelcomeEmp">Welcome Emp Page</a>
+<Br /><Br />
+
+
+
+
+WelcomeEmp.cshtml
+
+<h1>
+Welcome @TempData["EmpName"] !!
+</h1>
+
+
+
+
+
+
+
+
+
+
+
