@@ -61,7 +61,7 @@ namespace Day20Prj2MVC.Controllers
 Index.cshtml
 
 <h1>
-<a href="Employee/WelcomeEmp">Welcome Emp Page</a>
+<a href="/Home/WelcomeEmp">Welcome Emp Page</a>
 <Br /><Br />
 
 
