@@ -1,0 +1,56 @@
+HomeController:
+
+using Day20Prj2MVC.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Day20Prj2MVC.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            HttpContext.Response.Cookies.Append("userName", "MonicaG");
+
+            return View();
+        }
+        public IActionResult WelcomeEmp()
+        {
+            if (HttpContext.Request.Cookies.ContainsKey("userName"))
+            {
+                var user = HttpContext.Request.Cookies["userName"];
+                TempData["EmpName"] = user;
+            }
+            else
+                TempData["EmpName"] = "Monica";
+            return View();
+        }
+
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
