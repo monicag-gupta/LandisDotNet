@@ -1,0 +1,14 @@
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script src = "jquery.js"></script>
+      <script>
+         $(document).ready(function(){
+            document.write("Hello, World!");
+         });
+      </script>		
+   </head>
+   <body>
+      <h1>Hello</h1>
+   </body>
+</html>
