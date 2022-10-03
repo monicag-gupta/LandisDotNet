@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplication1.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        [ResponseCache( Duration = 10)]
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+    }
+}
+
+
+
+
+
+Index.cshtml
+
+<h4>
+    @DateTime.Now.ToString();
+</h4> 
+<h5><a href="Employee">IndexPage: Self</a></h5>
+
+
+
+
+
+Here, we are implementing ResponseCache that will cache the action method output for the specified time.
+
+It produces the following output and cache that for 10 seconds. 
+It will not change before 10 seconds even we refresh the web page again and again internally by clicking Self. 
+It means that if we refresh through browser then new Request-Response Cycle generates, 
+but within site the ResponseCache caches it for the duration.
+
+
