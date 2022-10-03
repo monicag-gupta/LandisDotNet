@@ -3,6 +3,54 @@
       <script src = "jquery.js">      </script>
          <script>
          $(document).ready(function() {
+            $("#btn1").click(function(){		
+		var x= parseInt($("#x").val());
+		var y= parseInt($("#y").val());
+		var z=x+y;
+		//alert($("div").html());//Result:
+		$("div").html("Result of <b>" + x + "</b> + <b>" + y + "</b> = <b>" + z + "</b>");
+		$("p").text("Result of <b>" + x + "</b> + <b>" + y + "</b> = <b>" + z + "</b>");
+	    });
+	   $("#btn2").click(function(){		
+		var x= parseInt($("#x").val());
+		var y= parseInt($("#y").val());
+		var z=x-y;
+		//alert($("div").html());//Result:
+		$("div").html("Result of <b>" + x + "</b> - <b>" + y + "</b> = <b>" + z + "</b>");
+		$("p").text("Result of <b>" + x + "</b> - <b>" + y + "</b> = <b>" + z + "</b>");
+	    });
+         });
+      </script>   
+</head>
+<body>
+	Enter x: <input type="text" id="x"><br>
+	Enter y: <input type="text" id="y"><br>
+	<button id="btn1">Add</button><br>
+	<div>Result: </div>
+	<p>Result: </p>
+	<br><br>
+	<button id="btn2">Sub</button><br>
+   </body> </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>   <head>
+      <title>The Selecter Example</title>
+      <script src = "jquery.js">      </script>
+         <script>
+         $(document).ready(function() {
             $("button").click(function(){		
 		var x= parseInt($("#x").val());
 		var y= parseInt($("#y").val());
