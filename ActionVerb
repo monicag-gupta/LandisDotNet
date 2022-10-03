@@ -1,0 +1,43 @@
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbotron">
+    <h2>Welcome to the Employee Management System.</h2>
+    <form action="Index" method="post">
+        <input type="submit" value="Index in Post" />
+    </form>
+    <form action="Index" method="get">
+        <input type="submit" value="Index in Get" />
+    </form>
+    <form action="Welcome" method="post">
+        <input type="submit" value="Welcome in Post" />
+    </form>
+    <form action="Welcome" method="get">
+        <input type="submit" value="Welcome in Get" />
+    </form>
+</div>
+
+
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day21MVCPrj1.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Welcome()
+        {
+            return View();
+        }
+
+
+    }
+}
