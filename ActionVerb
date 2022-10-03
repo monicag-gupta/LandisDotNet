@@ -41,3 +41,18 @@ namespace Day21MVCPrj1.Controllers
 
     }
 }
+
+
+
+
+
+
+
+
+@{
+    ViewBag.Title = "Employee";
+}
+<h2>Hello, This is site for Welcoming Employee.</h2> 
+
+
+
