@@ -3,6 +3,43 @@
       <script src = "jquery.js">      </script>
          <script>
          $(document).ready(function() {
+            $("button").click(function(){		
+		var x= parseInt($("#x").val());
+		var y= parseInt($("#y").val());
+		var z=x+y;
+		//alert($("div").html());//Result:
+		$("div").html("Result of <b>" + x + "</b> + <b>" + y + "</b> = <b>" + z + "</b>");
+		$("p").text("Result of <b>" + x + "</b> + <b>" + y + "</b> = <b>" + z + "</b>");
+	    });
+         });
+      </script>   
+</head>
+<body>
+	Enter x: <input type="text" id="x"><br>
+	Enter y: <input type="text" id="y"><br>
+	<button>Add</button><br>
+	<div>Result: </div>
+	<p>Result: </p>
+   </body> </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>   <head>
+      <title>The Selecter Example</title>
+      <script src = "jquery.js">      </script>
+         <script>
+         $(document).ready(function() {
             /* This would select all the divisions */
             $("#div2").click(function(){		
 		$(".small").css("background-color", "yellow");
