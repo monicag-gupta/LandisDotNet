@@ -1,3 +1,43 @@
+<html>   <head>
+      <title>The Selecter Example</title>
+      <script src = "jquery.js">      </script>
+         <script>
+         $(document).ready(function() {
+            /* This would select all the divisions */
+            $("div").css("background-color", "yellow");
+         });
+      </script>   </head>
+	   <body>
+      <div class = "big" id = "div1">
+         <p>This is first division of the DOM.</p>
+      </div>
+      <div class = "medium" id = "div2">
+         <p>This is second division of the DOM.</p>
+      </div>
+      <div class = "small" id = "div3">
+         <p>This is third division of the DOM</p>
+      </div>
+   </body> </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
    <head>
       <title>The jQuery Example</title>
