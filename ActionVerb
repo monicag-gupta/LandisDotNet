@@ -52,7 +52,12 @@ namespace Day21MVCPrj1.Controllers
 @{
     ViewBag.Title = "Employee";
 }
-<h2>Hello, This is site for Welcoming Employee.</h2> 
+<h2>Hello, This is site for Welcoming Employee.</h2>
+<hr />
+<h2>
+<a href="/Employee/Index">Goto Index</a>
+</h2>
+
 
 
 
