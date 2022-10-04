@@ -1,15 +1,68 @@
-EmployeeClass.cs
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WebApplication1.Models	{
-    public class EmployeeClass	    {
+namespace Day22MVCPrj1.Models
+{
+    public class EmployeeClass
+    {
         public int ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
+
     }
 }
+
+
+
+
+
+using System.Collections.Generic;
+
+namespace Day22MVCPrj1.Models
+{
+    public class EmpList
+    {
+        List<EmployeeClass> emps = new List<EmployeeClass>
+        {
+            new EmployeeClass{ID=101,Name="abc",Email="a@b.com",Contact="9999"},
+            new EmployeeClass{ID=102,Name="abcd",Email="ab@b.com",Contact="9989"},
+            new EmployeeClass{ID=103,Name="abcde",Email="abc@b.com",Contact="9899"},
+            new EmployeeClass{ID=104,Name="addc",Email="add@b.com",Contact="9988"}
+        };
+        public List<EmployeeClass> getEmps() { return emps; }
+        public List<EmployeeClass> AddEmp(EmployeeClass e) {
+            emps.Add(e); return emps; 
+        }
+
+    }
+}
+
+
+
+
+using Day22MVCPrj1.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day22MVCPrj1.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        public static EmpList emplist = new EmpList();
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult ListEmps(int ID,string Name, string Email, string Contact)
+        {
+            EmployeeClass e=new EmployeeClass { ID=ID, Name=Name, Email=Email, Contact=Contact };
+            emplist.AddEmp(e);
+            return View(emplist.getEmps());
+        }
+        public IActionResult ListEmp()
+        {
+            return View(emplist.getEmps());
+        }
+
+    }
+}
+
+
+
