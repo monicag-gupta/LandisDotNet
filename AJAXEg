@@ -286,6 +286,97 @@ Index.cshtml
 
 
 
+Exercise:
+For an array of JSON values, load the JSON through AJAX using Jquery, and display each record in table format.
+
+Result.json
+  {
+    "Emp1": {
+      "name": "Mr Jay",
+      "sal": "50000",
+      "add": "India"
+    },
+    "Emp2": {
+      "name": "Mr Jay2",
+      "sal": "20000",
+      "add": "USA"
+    }
+  }
+
+
+
+Method1:
+
+    <script src="~/js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var tblData="";
+                $.getJSON("Result.json", function (result) {
+                    $.each(result, function (i, field) {
+                        tblData = tblData + "<tr><td>"+i+"</td>";
+                        //$("#div1").append("Key is: " + i + ": Value is: " + field + "<br>");
+                        $.each(field, function (i2, field2){
+                            //$("#div1").append("Key is: " + i2 + ": Value is: " + field2 + "<br>");
+                            tblData = tblData + "<td>" + field2 + "</td>";
+                        });
+                    tblData = tblData + "</tr>";
+                    $("#div1").append(tblData);
+                    });
+                });
+            });
+        });
+    </script>
+
+
+    <button>Get JSON data</button>
+    <div>
+        <table id="div1" border="1">
+            <tr><th>EmpID</th><th>Name</th><th>Sal</th><th>Address</th></tr>
+        </table>
+    </div>
+
+
+
+
+
+Method2:
+
+    <script src="~/js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var tblData="";
+                $.getJSON("Result.json", function (result) {
+                $.each(result, function (i, field) {
+                        tblData = tblData + "<tr><td>"+i+"</td>";
+                        //$("#div1").append("Key is: " + i + ": Value is: " + field + "<br>");
+                        
+                    var obj = JSON.parse(JSON.stringify(field));
+                    alert(obj);
+                    //    //$.each(field, function (i2, field2){
+                    //        //$("#div1").append("Key is: " + i2 + ": Value is: " + field2 + "<br>");
+                    tblData = tblData + "<td>" + obj.name + "</td>" + "<td>" + obj.sal + "</td>" + "<td>" + obj.add + "</td>";
+                    //    //});
+                    tblData = tblData + "</tr>";
+                    $("#div1").append(tblData);
+                    });
+                });
+            });
+        });
+    </script>
+
+
+    <button>Get JSON data</button>
+    <div>
+        <table id="div1" border="1">
+            <tr><th>EmpID</th><th>Name</th><th>Sal</th><th>Address</th></tr>
+        </table>
+    </div>
+
+
+
+
 
 
 
