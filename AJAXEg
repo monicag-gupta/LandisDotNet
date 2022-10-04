@@ -231,6 +231,58 @@ Index.cshtml
 
 
 
+Getting JSON data
+There would be a situation when server would return JSON string against your request. JQuery utility function getJSON() parses the returned JSON string and makes the resulting string available to the callback function as first parameter to take further action.
+Syntax
+$(selector).getJSON(url,data,success(data,status,xhr))
+Parameter	
+url : Required. Specifies the url to send the request to
+Data :  Optional. Specifies data to be sent to the server
+success(data,status,xhr) : Optional. Specifies the function to run if the request succeeds
+Additional parameters:
+data - contains the data returned from the server.
+status - contains a string containing request status ("success", "notmodified", "error", "timeout", or "parsererror").
+xhr - contains the XMLHttpRequest object
+
+
+
+
+
+Result.json
+{
+"name": "Mr Jay",
+"sal" : "50000",
+"add": "India"
+}
+
+
+
+Index.cshtml
+
+
+    <script src="~/js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.getJSON("Result.json", function (result) {
+                    $.each(result, function (i, field) {
+                        $("#div1").append("Key is: " + i + ": Value is: " + field + "<br>");
+                    });
+                });
+            });
+        });
+    </script>
+
+
+    <button>Get JSON data</button>
+    <div id="div1"></div>
+
+
+
+
+
+
+
 
 
 
