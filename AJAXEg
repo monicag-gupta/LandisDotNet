@@ -353,7 +353,7 @@ Method2:
                         //$("#div1").append("Key is: " + i + ": Value is: " + field + "<br>");
                         
                     var obj = JSON.parse(JSON.stringify(field));
-                    alert(obj);
+                   // alert(obj);
                     //    //$.each(field, function (i2, field2){
                     //        //$("#div1").append("Key is: " + i2 + ": Value is: " + field2 + "<br>");
                     tblData = tblData + "<td>" + obj.name + "</td>" + "<td>" + obj.sal + "</td>" + "<td>" + obj.add + "</td>";
