@@ -203,20 +203,31 @@ The optional callback parameter is the name of a function to be executed if the 
 Index.cshtml
 
 
+
     <script src="jquery.js   "></script>
     <script>
         $(document).ready(function () {
             $("button").click(function () {
                 $.get("ajax_info.txt", function (data, status) {
                     alert("Data: " + data + "\nStatus: " + status);
-                    $("div").text("Data: " + data + "\nStatus: " + status);
+                    $("#div1").text("Data: " + data + "\nStatus: " + status);
                 });
             });
         });
     </script>
 
-    <div></div>
+    <div id="div1"></div>
     <button>Send an HTTP GET request to a page and get the result back</button>
+
+
+
+
+
+
+
+
+
+
 
 
 
