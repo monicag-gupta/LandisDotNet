@@ -204,7 +204,8 @@ Index.cshtml
 
 
 
-    <script src="jquery.js   "></script>
+
+    <script src="~/js/jquery.js"></script>
     <script>
         $(document).ready(function () {
             $("button").click(function () {
@@ -218,6 +219,13 @@ Index.cshtml
 
     <div id="div1"></div>
     <button>Send an HTTP GET request to a page and get the result back</button>
+
+
+
+
+
+
+
 
 
 
