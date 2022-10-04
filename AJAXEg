@@ -34,8 +34,8 @@ function loadDoc() {
 
 Index.cshtml
 
-<div id="demo">
-    <h1>The XMLHttpRequest Object</h1>
+<div>
+    <h1 id="demo">The XMLHttpRequest Object</h1>
     <button type="button" onclick="loadDoc()">Change Content</button>
 </div>
 <script>
