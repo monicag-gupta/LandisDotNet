@@ -229,3 +229,94 @@ Index.cshtml:
     </a>
 </h2>
 
+
+
+Example3:
+
+Index.cshtml:
+
+<h2>
+    <a href="/Employee/HTMLHelper1">
+        Standard HTML Helper Example
+    </a>
+</h2>
+<h2>
+    <a href="/Employee/HTMLHelper2">
+        Stongly Typed HTML Helper Example
+    </a>
+</h2>
+<h2>
+    <a href="/Employee/HTMLHelper3">
+        Display Templated HTML Helper Example
+    </a>
+</h2>
+
+
+
+EmployeeController.cs
+
+using Day23MVCHTMLHelpers.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day23MVCHTMLHelpers.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult HTMLHelper1()
+        {
+            return View();
+        }
+        public IActionResult CallUpdate(int id)
+        {
+            //search
+            EmployeeClass emp = new EmployeeClass();
+            return View(emp);
+        }
+        public ActionResult HTMLHelper2()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult HTMLHelper2(EmployeeClass emp)
+        {
+            return View();
+        }
+        public ActionResult HTMLHelper3()
+        {
+            //Here we have hardcoded the Employee Details. In Realtime you will get the data from any data source
+            EmployeeClass employee = new EmployeeClass()
+            {
+                EmpId = 1,
+                Name = "Jayanta Roy",
+                Gender = "Male",
+                city = city.Dehli,
+                skills = skills.WebAPI,
+                Address = "Vaishali",
+                AgreeTerm = true
+            };
+            ViewData["EmployeeData"] = employee;
+            return View();
+        }
+
+    }
+}
+
+
+
+
+
+HTMLHelper3.cshtml
+
+@{
+    ViewBag.Title = "Details";
+}
+<fieldset>
+    <legend>Employee Details</legend>
+    @Html.Display("EmployeeData")
+</fieldset>
+
+
