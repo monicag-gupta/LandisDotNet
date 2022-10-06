@@ -18,7 +18,7 @@ namespace Day23RouteEgMVC.Controllers
         {
             _logger = logger;
         }
-
+        [Route("empInfo")]
         public IActionResult Index()
         {
             return View();
@@ -29,6 +29,14 @@ namespace Day23RouteEgMVC.Controllers
         {
             return "hello " + id;
         }
+        [Route("[action]/{name}")]
+        public string GetHello(string name)
+        {
+            if (name.Equals("Saumay")) name = "User";
+            else name = "guest";
+            return "hello " + name;
+        }
+
 
         public IActionResult Privacy()
         {
