@@ -217,5 +217,15 @@ HTMLHelper2.csHTML:
 
 
 
-
+Index.cshtml:
+<h2>
+    <a href="/Employee/HTMLHelper1">
+        Standard HTML Helper Example
+    </a>
+</h2>
+<h2>
+    <a href="/Employee/HTMLHelper2">
+        Stongly Typed HTML Helper Example
+    </a>
+</h2>
 
