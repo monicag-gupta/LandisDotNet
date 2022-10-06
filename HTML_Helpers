@@ -191,7 +191,7 @@ namespace Day23MVCHTMLHelpers.Controllers
 
 HTMLHelper2.csHTML:
 
-@using WebApplication1.Models
+@using Day23MVCHTMLHelpers.Models
 @model EmployeeClass
 @{
     ViewBag.Title = "IndexHTMLHelper2";
