@@ -1,0 +1,102 @@
+HomeController:
+using Day23MVCRecap.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+
+
+namespace Day23MVCRecap.Controllers
+{
+    public class HomeController : Controller
+    {
+        public static EmpList emplist = new EmpList();
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public string AddNew(int x, string y)
+        {
+            emplist.addEmp(x, y);
+            return "Added";
+        }
+        public IActionResult Index2()
+        {
+            return View();
+        }
+        public string hello()
+        {
+            return "Hello from Home";
+        }
+        public JsonResult getEmps()
+        {
+            return Json(emplist.getEmps());
+        }
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
+Model: Emp.cs:
+
+using System.Collections.Generic;
+
+namespace Day23MVCRecap.Models
+{
+    public class Emp
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+    public class EmpList
+    {
+        public List<Emp> emps = new List<Emp>
+        {
+            new Emp{Id=101,Name="a"},
+            new Emp{Id=102,Name="b"},
+            new Emp{Id=103,Name="c"}
+        };
+        public List<Emp> getEmps()
+        {
+            return emps;
+        }
+        public void addEmp(int x, string n)
+        {
+            emps.Add(new Emp { Id = x, Name = n });
+        }
+    }
+}
+
+
+
+
+
+View : Index2.cshtml
+<form action="/Home/AddNew">
+    Enter ID: <input type="text" name="x" />
+    <br />
+    Enter Name: <input type="text" name="y" />
+    <br />
+    <input type="submit" />
+</form>
+
