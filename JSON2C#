@@ -1,0 +1,9 @@
+[DataContract]
+class Employee
+{
+    [DataMember]
+    public string Name { get; set; }
+
+    [DataMember]
+    public string Description { get; set; }
+}
