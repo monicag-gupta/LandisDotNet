@@ -1,10 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
-[DataContract]
-class Employee
-{
-    [DataMember]
-    public string Name { get; set; }
+using System.Runtime.Serialization.Json;
+using System.Text;
+using System.Threading.Tasks;
 
-    [DataMember]
-    public string Description { get; set; }
+namespace ConsoleApp5SerializeJSON
+{
+    [DataContract]
+    class Employee
+    {
+        [DataMember]
+        public string Name { get; set; }
+
+        [DataMember]
+        public string Description { get; set; }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee empObj = new Employee()
+            {
+                Name = "Jay",
+                Description = "IT"
+            };
+
+            DataContractJsonSerializer js = new DataContractJsonSerializer(typeof(Employee));
+            MemoryStream msObj = new MemoryStream();
+            js.WriteObject(msObj, empObj);
+            msObj.Position = 0;
+            StreamReader sr = new StreamReader(msObj);
+
+            // "{\"Description\":\"IT\",\"Name\":\"Jay\"}"
+            string json = sr.ReadToEnd();
+            Console.WriteLine("Stage 1: Serialization Starts..");
+            Console.WriteLine(json);
+            Console.WriteLine("Stage 1: Serialization Ends..");
+            sr.Close();
+            msObj.Close();
+
+
+
+
+            json = "{\"Description\":\"IT\",\"Name\":\"Jay\"}";
+
+            using (var ms = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+            {
+                // Deserialization from JSON
+                DataContractJsonSerializer deserializer = new DataContractJsonSerializer(typeof(Employee));
+                Employee empObj2 = (Employee)deserializer.ReadObject(ms);
+                Console.WriteLine("Stage 2: DeSerialization Starts..");
+                Console.Write("Name: " + empObj2.Name); // Name: Jay
+                Console.WriteLine("Description: " + empObj2.Description); // Description: IT
+                Console.WriteLine("Stage 2: DeSerialization ends..");
+            }
+            Console.ReadKey();
+
+        }
+    }
 }
+
