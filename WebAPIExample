@@ -111,6 +111,44 @@ namespace Member.Data.Repository {
 
 
 
+Code MemberAPI project:
+Open MemberAPI Project
+Add the project Member.Data project in the current Solution.
+Add the MemberAPI project dependencies as “Member.Data” 
+Right Click on MemberApi- Dependencies and add Project Reference.
+Now we will create in MemberAPI a Controller in the Controller folder. 
+Right-click on the Controller folder and Click on Add-Controller  
+Add API-Controller-Empty
+Name it MemberController.cs
+Code It.
+
+
+
+
+
+using Member.Data.Interface;
+using Member.Data.Model;
+using Member.Data.Repository;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+namespace MemberApi.Controllers {
+    [Route("api/[controller]")]
+    //[Produces("application/json")]
+    [ApiController]
+    public class MemberController : ControllerBase    {
+        private IMembers members = new MembersRepository();
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        public ActionResult<IEnumerable<Members>> GetAllMembers()        {
+            return members.GetAllMember();
+        }
+        [Microsoft.AspNetCore.Mvc.HttpGet("id")]
+        public ActionResult<Members> GetMemberById(int id)        {
+            return members.GetMember(id);
+        }
+    }
+}
+
+
 
 
 
