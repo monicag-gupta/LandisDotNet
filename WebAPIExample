@@ -1,0 +1,117 @@
+Prepare a Web API project as:
+MemberAPI
+Prepare a .Net class Library as:
+Member.Data
+
+
+Create a new Project with 
+Language: C#, 
+Project Template Type: Web
+Project Template : ASP.NET Core Web API
+Click Next 
+Configure a new Project with 
+Project Name : MemberAPI, 
+Project Location : Default
+Click Next
+Give defaults in Additional Information
+Click Create
+New Web API gets created
+It gets the default API as the Weather Forecast API.
+Start the Project in IIS Express (Internet Explorer or Microsoft Edge or Chrome or any of your favorite browser).
+Install the Certificate for SSL 
+
+
+
+
+Create a new Project with 
+Language: C#, 
+Project Template Type: All Project types
+Project Template : Class Library
+Click Next 
+Configure a new Project with 
+Project Name : Member.Data, 
+Project Location : Default
+Click Next
+Select .Net 6.0 as Version
+Click Create
+New Class Library gets created
+Now Add three Folders: Model, Interface, and Repository in Member.Data Class library.
+In the model folder, create a Model Class called Members.
+In the interface, Create Member Interface called IMember.
+In the repository folder, Create Class Called “MembersRepository” and implement IMembers interface in it. 
+In the real world, this class will interact with DB but in this demo, I will use hardcoded members data.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Member.Data.Model
+{
+    public class Members
+    {
+        public int MemberId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+    }
+}
+
+
+
+
+
+
+using System.Collections.Generic;
+using Member.Data.Model;
+
+namespace Member.Data.Interface
+{
+    public interface IMembers
+    {
+        List<Members> GetAllMember();
+        Members GetMember(int id);
+    }
+}
+
+
+
+
+
+
+using Member.Data.Interface;
+using Member.Data.Model;
+using System.Collections.Generic;
+using System.Linq;
+namespace Member.Data.Repository {
+    public class MembersRepository : IMembers    {
+        List<Members> lisMembers = new List<Members>        {
+            new Members{MemberId=1, FirstName="Kirtesh", LastName="Shah", Address="Vadodara" },
+            new Members{MemberId=2, FirstName="Nitya", LastName="Shah", Address="Vadodara" },
+            new Members{MemberId=3, FirstName="Dilip", LastName="Shah", Address="Vadodara" },
+            new Members{MemberId=4, FirstName="Atul", LastName="Shah", Address="Vadodara" },
+            new Members{MemberId=5, FirstName="Swati", LastName="Shah", Address="Vadodara" },
+            new Members{MemberId=6, FirstName="Rashmi", LastName="Shah", Address="Vadodara" },
+        };
+        public List<Members> GetAllMember()        {
+            return lisMembers;
+        }
+        public Members GetMember(int id)        {
+            return lisMembers.FirstOrDefault(x => x.MemberId == id);
+        } 
+   }	
+}
+
+
+
+
+
+
+
+
+
+
+
