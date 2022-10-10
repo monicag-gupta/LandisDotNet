@@ -1,3 +1,14 @@
 NuGet Package Manager and search for the Serilog.AspNetCore package from Microsoft and install the latest stable version
 
 
+
+
+Add in Program.cs
+//before var app = builder.Build();
+
+var logger = new LoggerConfiguration()
+  .ReadFrom.Configuration(builder.Configuration)
+  .Enrich.FromLogContext()
+  .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
