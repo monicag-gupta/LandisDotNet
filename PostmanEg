@@ -1,0 +1,111 @@
+https://www.getpostman.com/
+https://www.postman.com/downloads/?utm_source=postman-home
+Around 144 mb download..
+Postman-win64-9.19.3-Setup.exe
+Download and install
+
+
+
+
+Run your application to get the API URL..
+https://localhost:7238/swagger/index.html
+
+We get the URLs of the API: Get Request:
+https://localhost:7238/api/Students
+
+
+
+
+
+Postman : Get
+Press + sign
+Select Get from the dropdown
+Enter the URL of the API
+Press send
+If required disable the SSL Certificate
+
+
+
+Post:
+https://localhost:7238/api/Students
+
+{
+  "studentId": 120,
+  "name": "newName",
+  "surName": "newSurName"
+}
+
+
+
+
+Click +
+Select Post from drop down
+Paste URL
+Select Body
+Select Raw
+Select JSON
+Paste in the Editor:
+{
+  "studentId": 120,
+  "name": "newName",
+  "surName": "newSurName"
+}
+Click Send
+
+
+
+
+
+https://localhost:7238/api/Students/updateStd/120
+
+ID: 120
+Data:
+{
+  "studentId": 120,
+  "name": "120New",
+  "surName": "120NewSur"
+}
+
+
+
+
+
+Click +
+Select Put from drop down
+Paste URL
+Select Body
+Select Raw
+Select JSON
+Paste in the Editor:
+{
+  "studentId": 120,
+  "name": "120New",
+  "surName": "120NewSur"
+}
+Click Send
+
+
+
+
+
+
+
+
+https://localhost:7238/api/Students/DeleteStd/102
+
+Id: 102
+
+
+Click +
+Select Delete from drop down
+Paste URL
+Change to 103 as 102 is already deleted:
+https://localhost:7238/api/Students/DeleteStd/103
+Click Send
+
+
+
+
+
+
+
