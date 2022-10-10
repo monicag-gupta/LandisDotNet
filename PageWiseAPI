@@ -1,0 +1,15 @@
+[HttpGet("page")]
+        public IEnumerable<WeatherForecast> GetPagewise(int page)
+        {
+            if (page < 1) page = 0;
+            int pagesize = 4;
+            int totalpage = page * pagesize;
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            })
+                .Skip(totalpage).Take(pagesize)
+                .ToArray();
+        }
