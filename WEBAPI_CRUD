@@ -1,0 +1,17 @@
+Student.cs:
+
+namespace Day25API_CRUD.Models
+{
+    public class Student
+    {
+        public int StudentId { get; set; }
+        public string Name { get; set; }
+        public string SurName { get; set; }
+
+        public override string ToString()
+        {
+            return "ID: " + StudentId.ToString() + " Name: " + Name + " " + SurName;
+        }
+
+    }
+}
