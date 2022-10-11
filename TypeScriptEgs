@@ -484,5 +484,43 @@ console.log(afile.greeting); //Prints Hello World!
 
 
 
+file1.ts:
+
+export var greeting : string = "Hello World!";
+
+export class Addition{  
+    constructor(private x?: number, private y?: number){  
+    }  
+    Sum(){  
+        console.log("SUM: " +(this.x + this.y));  
+    }  
+} 
+
+
+
+
+file2.ts:
+//import  * as afile from "./file1";
+import {Addition} from './file1';  
+
+//console.log(afile.greeting); //Prints Hello World!
+//afile.greeting="hello";
+//greeting is a read-only property here, non-editable.
+
+  
+//let addObject = new afile.Addition(10, 20);   
+ 
+let addObject = new Addition(10, 20);
+
+addObject.Sum(); 
+
+
+
+
+
+
+
+
+
 
 
