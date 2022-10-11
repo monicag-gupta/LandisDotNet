@@ -301,6 +301,12 @@ console.log(mystr.charAt(4));
 console.log(mystr.indexOf("o"));
 console.log(mystr.lastIndexOf("o"));
 console.log(mystr.split(" ").length);
+console.log("All words are:");
+var a=mystr.split(" ");
+var i;
+for(i=0;i<a.length;i++){
+    console.log(a[i] + " with length: " + a[i].length);
+}
 
 
 
