@@ -455,6 +455,31 @@ console.log(greeting); //Prints Hello TypeScript
 
 
 
+Module:
+file1.ts:
+export var greeting : string = "Hello World!";
+
+
+
+file2.ts:
+import  * as afile from "./file1";
+console.log(afile.greeting); //Prints Hello World!
+//afile.greeting="hello";
+//greeting is a read-only property here, non-editable.
+
+
+
+
+
+>tsc --module amd file1.ts file2.ts
+
+>tsc file2.ts
+
+>node file2.js
+
+
+
+
 
 
 
