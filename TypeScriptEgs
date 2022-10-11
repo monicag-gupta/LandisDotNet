@@ -368,6 +368,29 @@ console.log(employee.lastName);
 
 
 
+interface IParent1 { 
+   v1:number 
+   } 
+interface IParent2 { 
+      v2:number 
+  } 
+
+//automatically Child interface contains v1 and v2
+  interface Child extends IParent1, IParent2 { } 
+
+  //creating obj of type Child, Iobj has to provide values to v1 and v2
+  var Iobj:Child = { v1:12, v2:23} 
+  
+  //printing Iobj.v1 and Iobj.v2
+  console.log("value 1: " + Iobj.v1 + " value 2: " + Iobj.v2)
+
+
+
+
+
+
+
+
 
 
 
