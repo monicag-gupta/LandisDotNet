@@ -179,3 +179,82 @@ if( month<=0 || month >12) {
 }
 
 
+
+
+
+
+
+
+
+console.log("TypeScript Number Properties: "); 
+console.log("Maximum value that a number variable can hold: " + Number.MAX_VALUE); 
+console.log("The least value that a number variable can hold: " + Number.MIN_VALUE); 
+console.log("Value of Negative Infinity: " + Number.NEGATIVE_INFINITY); 
+console.log("Value of Positive Infinity:" + Number.POSITIVE_INFINITY);
+function monthName(month:number){
+    console.log("\nFunction starts: \nValue given is: " + month)
+    if( month<=0 || month >12) { 
+        month = Number.NaN 
+        console.log("Month is "+ month) 
+    } 
+    else { 
+        console.log("Value Accepted as: " + month) 
+        switch(month){
+            case 1:
+                console.log("Month is January"); break; 
+            case 2:
+                console.log("Month is February"); break; 
+            case 3:
+                console.log("Month is March"); break; 
+            default:
+                console.log("Month is valid"); break; 
+        }
+    }
+}
+function monthNumOfDays(month:number){
+    console.log("\nFunction starts: \nValue given is: " + month)
+    if( month<=0 || month >12) { 
+        month = Number.NaN 
+        console.log("Month is "+ month) 
+    } 
+    else { 
+        console.log("Value Accepted as: " + month) 
+        switch(month){
+            case 2:
+                console.log("Month Days are 28 or 29"); break; 
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                console.log("Month Days are 31"); break; 
+            case 2:
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                console.log("Month Days are 30"); break; 
+            default:
+                console.log("Month is invalid"); break; 
+        }
+    }
+}
+console.log("\n\nMonth Name function called:");
+monthName(2);
+monthName(15);
+console.log("\n\nMonth Number of Days function called:");
+monthNumOfDays(6);
+monthNumOfDays(8);
+monthNumOfDays(14);
+monthNumOfDays(2);
+
+
+
+
+
+
+
+
+
