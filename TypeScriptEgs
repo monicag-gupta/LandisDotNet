@@ -435,6 +435,29 @@ obj.doPrint()
 
 
 
+file1.ts:
+var greeting : string = "Hello World!";
+
+
+
+file2:
+console.log(greeting); //Prints Hello World!
+greeting = "Hello TypeScript"; // allowed
+console.log(greeting); //Prints Hello TypeScript
+
+
+
+
+>tsc --outfile prj1.js file1.ts file2.ts
+>node prj1.js
+
+
+
+
+
+
+
+
 
 
 
