@@ -70,6 +70,7 @@ function res2(a:number,b:number){
  		return a+b;
 }
 console.log(res(12,2)) 
+console.log(res2(12,2))
 console.log(msg())
 
 
