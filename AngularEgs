@@ -92,6 +92,47 @@ p{
 
 
 
+app.component.html:
 
+<h1>Component is the main Building Block in Angular</h1>   
+<h2>Angular Samples New html file</h2>  
+<p>  
+    Use of <b>External HTML</b> files with the Component  
+</p>
+
+
+
+
+LifeCycle:
+app.component.ts:
+
+import { Component } from '@angular/core';  
+ @Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+  data1:number=100; 
+  data3:number=102;
+  data2:number=110;      
+    constructor() {    
+        console.log(`new - data is ${this.data2}`);    
+    }          
+    ngOnChanges() {    
+        console.log(`ngOnChanges - data is ${this.data3}`);    
+    }      
+    ngOnInit() {    
+        console.log(`ngOnInit  - data is ${this.data1}`);    
+    }   
+} 
+
+
+
+
+app.component.html:
+
+<span class="setup">Given Number</span>    
+<h1 class="punchline">{{ data1 }}</h1> 
 
 
