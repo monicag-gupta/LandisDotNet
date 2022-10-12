@@ -201,6 +201,11 @@ app.component.html:
 
 
 
+<div>       
+    <input type="text" [value]="value1" />   
+    <br /><br />  
+</div> 
+
 
 
 
