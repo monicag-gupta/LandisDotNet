@@ -136,3 +136,13 @@ app.component.html:
 <h1 class="punchline">{{ data1 }}</h1> 
 
 
+
+
+
+
+
+Child Component:
+
+ng generate component child
+
+
