@@ -1,7 +1,10 @@
+SOLID:
+S: The Single Responsibility Principle
+O : The Open-Closed Principle
+L : The Liskov Substitution Principle
+I : The Interface Segregation Principle
+D: The Dependency Inversion Principle
 
-Rakesh Grover <rakeshgrover1996@gmail.com>
-11:27 AM (3 minutes ago)
-to me
 
 using System;
 using System.Collections.Generic;
