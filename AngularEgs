@@ -7,3 +7,13 @@ https://cli.angular.io/
 
 
 
+Angular App important files and folders:
+src folder: This folder contains the main code files.
+app folder: The app folder contains app components.
+app.component.css: This file contains the cascading style sheets.
+app.component.html: This file contains the html file related to app component. This is the template file which is used by angular to do the data binding.
+app.component.spec.ts: This file is a unit testing file related to app component. This file is used along with other unit tests. It is run from Angular CLI by the command ng test.
+app.component.ts: This is the most important typescript file which includes the view logic behind the component.
+app.module.ts: This is also a typescript file which includes all the dependencies for the website. This file is used to define the needed modules to be imported, the components to be declared and the main component to be bootstrapped.
+
+
