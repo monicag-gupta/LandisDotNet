@@ -1,0 +1,185 @@
+
+Rakesh Grover <rakeshgrover1996@gmail.com>
+11:27 AM (3 minutes ago)
+to me
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DI_IOC_SOLID
+{
+    class Emp1//Not in SRP
+    {
+        public int id;
+        public string name;
+        public void Proj()
+        {
+            Console.WriteLine("Project work");
+        }
+        public void Team()
+        {
+            Console.WriteLine("Manage team");
+        }
+    }
+    class Emp  //generalize the common fields and functions //Advise
+    {
+        public int id;
+        public string name;
+
+    }
+    class Emp2 : Emp //In SRP
+    {
+        void Proj()
+        {
+            Console.WriteLine("Project work");
+        }
+       
+    }
+    class Emp3 : Emp //Not in SRP
+    {
+       
+        void Team()
+        {
+            Console.WriteLine("Manage team");
+        }
+    }
+
+    class Bird //LSP
+    {
+        public virtual void fly()
+        {
+            Console.WriteLine("Birds fly");
+        }
+        public virtual void eat()
+        {
+            Console.WriteLine("Birds eat");
+        }
+
+    }
+    class Ostrich : Bird
+    {
+        public override void fly()  //against LSR
+        {
+            throw new NotImplementedException();
+        }
+        public override void eat()
+        {
+            Console.WriteLine("Ostrichs eat");
+        }
+    }
+
+    class FlyingBird
+    {
+        public virtual void fly()
+        {
+            Console.WriteLine("Birds fly");
+        }
+        public virtual void eat()
+        {
+            Console.WriteLine("Birds eat");
+        }
+    }
+    class NonFlyingBird
+    {
+       
+        public virtual void eat()
+        {
+            Console.WriteLine("Birds eat");
+        }
+    }
+    class Ostrichs: NonFlyingBird
+    {
+        public override void eat()
+        {
+            Console.WriteLine("Ostrichs eat");
+        }
+
+    }
+
+    interface Calc //Not in ISP
+    {
+        void tempCal(int c, int f);
+        void distCal(int m, int km);
+    }
+    class civilEngg : Calc
+    {
+        public void tempCal(int c, int f) { }
+        public void distCal(int m, int km)
+        {
+            Console.WriteLine("1 km = 1000m");
+        }
+    }
+    interface TCalc //In ISP
+    {
+        void tempCal(int c, int f);
+       
+    }
+    interface DCalc //In ISP
+    {
+       
+        void distCal(int m, int km);
+    }
+    class civilEngg2 : DCalc
+    {
+       
+        public void distCal(int m, int km)
+        {
+            Console.WriteLine("1 km = 1000m");
+        }
+    }
+
+
+    class Restaurant
+    {
+        Drink d;
+        public void getDrink()
+        {
+            d.serve();
+        }
+        public void setDrink(Drink d)
+        {
+            this.d = d;
+        }
+    }
+    interface Drink
+    {
+        void serve();
+    }
+    class Tea : Drink
+    {
+        public void serve()
+        {
+            Console.WriteLine("Serve hot tea");
+        }
+    }
+    class Soup : Drink
+    {
+        public void serve()
+        {
+            Console.WriteLine("Serve hot Soup");
+        }
+    }
+
+    internal class Program
+    {
+        public static void framework(FlyingBird b)
+        {
+            b.fly();
+            b.eat();
+        }
+        static void Main(string[] args)
+        {
+            framework(new FlyingBird());
+            //framework(new Ostrichs());
+            Restaurant r = new Restaurant();
+            r.setDrink(new Tea());
+            r.getDrink();
+             
+
+        }
+    }
+}
+
