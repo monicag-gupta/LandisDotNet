@@ -131,6 +131,15 @@ namespace Day28EFPrj
 
 
 
+PM> Add-Migration InitialCreate
+Build started...
+Build succeeded.
+To undo this action, use Remove-Migration.
+PM> Update-Database
+Build started...
+Build succeeded.
+Done.
+PM>
 
 
 
