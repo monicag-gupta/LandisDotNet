@@ -1,0 +1,20 @@
+Microsoft.EntityFrameworkCore.SqlServer : version 5.0.17
+Microsoft.EntityFrameworkCore.Tools : version 5.0.17
+
+
+Models.EmployeeEF.cs
+
+using System.ComponentModel.DataAnnotations;
+
+namespace WebApplication4.Models
+{
+    public class EmployeeEF
+    {
+        [Key]
+        public int id { get; set; }
+        [Required(ErrorMessage = "Required Name")]
+        public string name { get; set; }
+        public int salary { get; set; }
+    }
+}
+
