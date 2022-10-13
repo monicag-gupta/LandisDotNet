@@ -46,4 +46,22 @@ namespace WebApplication4.Models
 
 
 
+Add in appSettings.json:
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "EmpCon": "Data Source = DESKTOP-62JHJ6O\\SQLEXPRESS; Initial Catalog = training; Integrated Security = True"
+  }
+}
+
+
+
 
