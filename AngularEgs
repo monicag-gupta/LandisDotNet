@@ -426,5 +426,73 @@ app.component.html:
 
 
 
+ng generate component message
+
+
+message.component.ts:
+
+import { Component, Input } from '@angular/core';  
+ @Component({  
+  selector: 'message-info',  
+  templateUrl: './message.component.html',  
+  styleUrls : ['./message.component.css']  
+})  
+export class MessageComponent {  
+    @Input() public message :string = '';  
+    @Input('alert-pop') public message1 :string= ''  
+     public showAlert():void{  
+        alert(this.message1);  
+    }  
+}  
+
+
+
+
+message.component.html:
+
+<div>  
+    Message : <h2>{{message}}</h2>  
+    <input type="button" value="Show Alert" (click)="showAlert()"/>  
+</div> 
+
+
+
+
+
+app.component.ts:
+
+import { Component } from '@angular/core';  
+ @Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+    public val: string = "This is alert popup message from app.component to @input metadata of message component";   
+}  
+
+
+
+
+app.component.html:
+
+<h1>
+  Hello
+</h1>
+<message-info 
+[message]='"This is passed from app.component to message component"'
+[alert-pop]="val"></message-info>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
