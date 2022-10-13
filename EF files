@@ -18,3 +18,32 @@ namespace WebApplication4.Models
     }
 }
 
+
+
+
+
+Models.EmployeeEFContext.cs
+
+
+
+using Microsoft.EntityFrameworkCore;
+
+namespace WebApplication4.Models
+{
+    public class EmployeeEFContext : DbContext
+    {
+        public EmployeeEFContext()
+        {
+        }
+        public EmployeeEFContext(DbContextOptions<EmployeeEFContext> options): base(options)
+        {
+        }
+        public DbSet<EmployeeEF> EmployeeEFs { get; set; }
+    }
+}
+
+
+
+
+
+
