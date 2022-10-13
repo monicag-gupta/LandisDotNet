@@ -1,0 +1,20 @@
+Modify main() in program.cs in MVC after installing serilog
+
+
+public static void Main(string[] args)
+        {
+             var logger = new LoggerConfiguration()
+                .MinimumLevel.Information()
+                .WriteTo.File(("C:\\Monica\\logWebApp.txt"),
+                        rollingInterval: RollingInterval.Day,
+                        fileSizeLimitBytes: 5242880,
+                        rollOnFileSizeLimit: true)
+                .WriteTo.File(new CompactJsonFormatter(), "C:\\Monica\\logWebAppJson.txt")
+                .WriteTo.Console(restrictedToMinimumLevel: LogEventLevel.Information)
+                .WriteTo.Console(outputTemplate:
+                    "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                .CreateLogger();
+            logger.Write(LogEventLevel.Information, "This is logged in as Information");
+
+            CreateHostBuilder(args).Build().Run();
+        }
