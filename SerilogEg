@@ -1,4 +1,6 @@
 Modify main() in program.cs in MVC after installing serilog
+NuGet Package Manager and search for the Serilog.AspNetCore and Serilog.Sinks.File package from Microsoft and install the latest stable version
+
 
 
 public static void Main(string[] args)
