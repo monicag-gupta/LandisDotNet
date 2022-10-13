@@ -43,6 +43,10 @@ tsconfig.json: The configuration file for TypeScript.
 tslint.json: The configuration file for TSlint (a static analysis tool)
 
 
+path of rendering site:
+index.html -> main.ts -> app.module.ts -> app.component.ts ->app.component.html
+app.component.html takes us to the child.component.ts -> child.component.html
+
 
 
 Navigate to your project folder and run:
