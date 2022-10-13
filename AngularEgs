@@ -490,6 +490,84 @@ app.component.html:
 
 
 
+message.component.ts:
+import { Component, Input } from '@angular/core';  
+import { Output, EventEmitter } from '@angular/core';
+ @Component({  
+  selector: 'message-info',  
+  templateUrl: './message.component.html',  
+  styleUrls : ['./message.component.css']  
+})  
+export class MessageComponent {  
+    @Input() public message :string = '';  
+    @Input('alert-pop') public message1 :string= ''  
+     public showAlert():void{  
+        alert(this.message1);  
+    }  
+    @Output() newItemEvent = new EventEmitter<string>();
+
+    addNewItem(value: string) {
+      this.newItemEvent.emit(value);
+    }
+}  
+
+
+
+
+
+message.component.html:
+
+<div>  
+    Message : <h2>{{message}}</h2>  
+    <input type="button" value="Show Alert" (click)="showAlert()"/>  
+</div> 
+<div>
+    <label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
+</div>
+
+
+
+app.component.ts:
+import { Component } from '@angular/core';  
+ @Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+    public val: string = "This is alert popup message from app.component to @input metadata of message component";   
+    items = ['item1', 'item2', 'item3', 'item4'];
+
+  addItem(newItem: string) {
+    this.items.push(newItem);
+  }
+}  
+
+
+
+
+app.component.html:
+
+<h1>
+  Hello
+</h1>
+
+<h2>
+  <message-info (newItemEvent)="addItem($event)" 
+  [message]='"This is passed from app.component to message component"'
+  [alert-pop]="val"></message-info>
+</h2>
+
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
+
+
+
+
+
 
 
 
